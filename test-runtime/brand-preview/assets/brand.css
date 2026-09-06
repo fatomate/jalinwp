@@ -1,0 +1,18 @@
+/* JalinWP shared brand tokens. Scoped to plugin screens; no global admin or site overrides. */
+.fg-wrap,
+.jalinwp-oauth {
+    --jalinwp-cobalt: #3048FF;
+    --jalinwp-coral: #FF4D45;
+    --jalinwp-midnight: #18153F;
+    --jalinwp-white: #FFFFFF;
+    --jalinwp-surface-tint: #F3F4FF;
+    --jalinwp-text-secondary: #55556A;
+    --jalinwp-border: #DADCEA;
+    --jalinwp-control-border: #76768C;
+    --jalinwp-success: #205A32;
+    --jalinwp-success-surface: #E8F5EB;
+    --jalinwp-warning: #7D510A;
+    --jalinwp-warning-surface: #FFF4D9;
+    --jalinwp-error: #9B2424;
+    --jalinwp-error-surface: #FCE9E9;
+}

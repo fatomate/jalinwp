@@ -1,0 +1,41 @@
+name: Repository Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository:
+    name: Repository, Packaging, And Bridge
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Official action usage: https://github.com/actions/checkout
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      # https://github.com/actions/setup-python
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      # https://github.com/actions/setup-node
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Verify Repository
+        run: python3 scripts/check-repository.py
+      - name: Test Packaging
+        run: python3 scripts/test-package.py
+      - name: Test Local Bridge
+        run: node --test fames-mcp-gateway/bridge/test.mjs
+      - name: Build Install And Source ZIPs
+        run: python3 scripts/package.py
+
+# This starter workflow does not publish releases or use site credentials.
+# Full disposable WordPress/WooCommerce, native database, and visual/client
+# checks remain documented in test-runtime/DEVELOPER-TESTS.md.

@@ -1,0 +1,89 @@
+(function () {
+    'use strict';
+
+    document.querySelectorAll('[data-copy-target]').forEach(function (button) {
+        button.hidden = false;
+        button.addEventListener('click', async function () {
+            var input = document.getElementById(button.dataset.copyTarget);
+            var status = document.getElementById('fg-copy-status');
+            if (!input || !status) { return; }
+            input.focus();
+            input.select();
+            try {
+                if (!navigator.clipboard || !window.isSecureContext) { throw new Error('clipboard_unavailable'); }
+                await navigator.clipboard.writeText(input.value);
+                status.textContent = 'URL copied. Paste it into your MCP connector settings.';
+            } catch (error) {
+                status.textContent = 'URL selected. Press Ctrl+C or Command+C to copy it.';
+            }
+        });
+    });
+
+    document.querySelectorAll('.fg-immediate-action, .fg-settings-form').forEach(function (actionForm) {
+        actionForm.addEventListener('submit', function (event) {
+            if (actionForm.dataset.submitting === 'true') { event.preventDefault(); return; }
+            if (actionForm.dataset.fgConfirm && !window.confirm(actionForm.dataset.fgConfirm)) { event.preventDefault(); return; }
+            actionForm.dataset.submitting = 'true';
+            actionForm.setAttribute('aria-busy', 'true');
+            window.setTimeout(function () { actionForm.querySelectorAll('button[type="submit"], input[type="submit"]').forEach(function (button) { button.disabled = true; }); }, 0);
+        });
+    });
+
+    var diagnosticLabels = {'Administrator access': 'Administrator Access', 'OAuth enabled': 'OAuth Enabled', 'Allowed accounts': 'Allowed Accounts', 'Gateway storage': 'Gateway Storage', 'Public discovery': 'Public Discovery', 'OAuth discovery': 'OAuth Discovery', 'MCP resource discovery': 'MCP Resource Discovery', 'Proactive MCP resource discovery': 'Proactive MCP Resource Discovery', 'Sign-in challenge': 'Sign-In Challenge', 'GET sign-in challenge': 'GET Sign-In Challenge', 'Final client test': 'Final Client Test'};
+    function initConnectionChecks() {
+    var form = document.getElementById('fg-check-form');
+    if (!form || typeof fgConnection === 'undefined' || !window.fetch) { return; }
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        var button = form.querySelector('button[type="submit"]');
+        var status = document.getElementById('fg-check-status');
+        var results = document.getElementById('fg-check-results');
+        button.disabled = true;
+        button.textContent = 'Checking…';
+        status.textContent = 'Checking the gateway and sign-in URLs. This can take a few moments.';
+        results.replaceChildren();
+        results.setAttribute('aria-busy', 'true');
+        var controller = new AbortController();
+        var timeout = window.setTimeout(function () { controller.abort(); }, 60000);
+        try {
+            var body = new URLSearchParams({ action: 'fg_connection_check', _ajax_nonce: fgConnection.nonce });
+            var response = await fetch(fgConnection.ajaxUrl, { method: 'POST', credentials: 'same-origin', body: body, signal: controller.signal });
+            var payload = await response.json();
+            if (!response.ok || !payload.success || !payload.data || !Array.isArray(payload.data.checks)) {
+                throw new Error('diagnostics_failed');
+            }
+            var list = document.createElement('ul');
+            list.className = 'fg-check-list';
+            payload.data.checks.forEach(function (check) {
+                var state = ['pass', 'fail', 'warning'].includes(check.status) ? check.status : 'warning';
+                var item = document.createElement('li');
+                var badge = document.createElement('span');
+                badge.className = 'fg-status fg-status-' + state;
+                badge.textContent = state.charAt(0).toUpperCase() + state.slice(1);
+                var description = document.createElement('div');
+                var label = document.createElement('strong');
+                var detail = document.createElement('p');
+                label.textContent = typeof check.label === 'string' ? (diagnosticLabels[check.label] || check.label) : 'Connection Check';
+                detail.textContent = typeof check.detail === 'string' ? check.detail : '';
+                description.append(label, detail);
+                item.append(badge, description);
+                list.append(item);
+            });
+            results.append(list);
+            status.textContent = payload.data.checks.some(function (check) { return check.status === 'fail'; })
+                ? 'Checks completed. Resolve the failed checks, then try connecting again.'
+                : 'Checks completed. Review any warnings, then finish connecting in your AI client.';
+        } catch (error) {
+            status.textContent = error.name === 'AbortError'
+                ? 'The check timed out. Your host may be blocking requests to its own sign-in URLs. Ask your host to check loopback requests, then try again.'
+                : 'The check could not finish. Reload this page and try again. If it persists, check your host or security plugin for blocked WordPress admin requests.';
+        } finally {
+            window.clearTimeout(timeout);
+            button.disabled = false;
+            button.textContent = 'Check Connection';
+            results.removeAttribute('aria-busy');
+        }
+    });
+    }
+    initConnectionChecks();
+})();

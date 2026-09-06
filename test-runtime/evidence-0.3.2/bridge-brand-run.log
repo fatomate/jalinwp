@@ -1,0 +1,24 @@
+✔ HTTPS endpoint accepts a WordPress subdirectory and rejects unsafe or ambiguous URLs (1.955232ms)
+✔ environment credentials are encoded only in Authorization and TLS bypass is rejected (1.284964ms)
+✔ a restricted credential file wins over env; permissive files and symlinks are refused on Unix (16.351463ms)
+✔ initialize, initialized notification, and tool request forward serially with negotiated headers (7.595167ms)
+✔ all supported negotiated versions are forwarded; unsupported negotiation is rejected (5.427256ms)
+✔ successful notifications and client responses produce no stdout replies (1.563813ms)
+✔ notification HTTP failures or nonempty acknowledgements remain stderr-only and sanitized (2.45228ms)
+✔ a valid tool result and JSON-RPC application error are passed through unchanged (1.509742ms)
+✔ HTTP failures, redirects, invalid bodies, and mismatched responses return errors to the request id without leaking secrets (5.129438ms)
+✔ timeouts abort the fetch and never retry a potentially completed write (16.542286ms)
+✔ the deadline covers streaming body reads too (16.393782ms)
+✔ oversized declared or streamed responses are refused and their bodies cancelled (1.434989ms)
+✔ chunked UTF-8 and CRLF framing work; oversized lines recover without forwarding their payload (3.815131ms)
+✔ malformed JSON, batch arrays, invalid notifications and invalid UTF-8 do not reach HTTPS (0.754736ms)
+✔ a failed request does not poison the serial queue (0.627865ms)
+✔ CLI configuration failures stay on stderr, with no credentials or endpoint secrets (38.299062ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 239.988862

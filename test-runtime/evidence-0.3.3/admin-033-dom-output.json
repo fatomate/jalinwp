@@ -1,0 +1,39 @@
+{
+  "passed": 8,
+  "total": 8,
+  "engine": "jsdom; real WP-rendered markup; no browser or HTTP",
+  "cases": [
+    {
+      "name": "Real Connections markup exposes distinct all/inactive cleanup actions",
+      "pass": true
+    },
+    {
+      "name": "Cancel keeps the destructive form idle and enabled",
+      "pass": true
+    },
+    {
+      "name": "Confirmed clear-all enters submitting state",
+      "pass": true
+    },
+    {
+      "name": "A second submit is blocked without prompting again",
+      "pass": true
+    },
+    {
+      "name": "Confirmed form disables the submit button while retaining nonce and cleanup flag",
+      "pass": true
+    },
+    {
+      "name": "Inactive cleanup submits without another confirmation and blocks repeat clicks",
+      "pass": true
+    },
+    {
+      "name": "Inactive Delete form remains a targeted nonce-protected action",
+      "pass": true
+    },
+    {
+      "name": "Access tab script works without connection-check elements",
+      "pass": true
+    }
+  ]
+}

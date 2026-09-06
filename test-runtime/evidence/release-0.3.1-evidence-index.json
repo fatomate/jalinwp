@@ -1,0 +1,124 @@
+{
+  "version": "0.3.1",
+  "date": "2026-09-05",
+  "executed": [
+    {
+      "check": "YOLO Settings",
+      "file": "setup-yolo-tests-output.json",
+      "passed": 37,
+      "total": 37,
+      "scope": "Mode defaults, strict saves, stale forms, access help and history.",
+      "sha256": "30b10216cacdeed8a85c746c2e4fd15375f9cfb9d1ea590e3031862463e18f4c"
+    },
+    {
+      "check": "YOLO OAuth Consent",
+      "file": "yolo-oauth-tests-output.json",
+      "passed": 20,
+      "total": 20,
+      "scope": "Existing grants, consent snapshots, mode intersections and authenticated request boundaries.",
+      "sha256": "15b052c44b5e669e9f1e0cb6ed65884459cc0f0fa950a1e15ccd8c6d2f921adf"
+    },
+    {
+      "check": "YOLO Execution",
+      "file": "yolo-execution-tests-output.json",
+      "passed": 16,
+      "total": 16,
+      "scope": "Direct drafts, canvas blocks, recovery revisions, orders, policy races, audit failure and no repeated apply.",
+      "sha256": "3fc5c84eb9b20772044f5c6864c73acb2e74fedf2fe9446797c16a2c914d482c"
+    },
+    {
+      "check": "Mode-Aware Tool Metadata",
+      "file": "yolo-metadata-tests-output.json",
+      "passed": 3,
+      "total": 3,
+      "scope": "Initialize, tool descriptions and page design validation in all modes.",
+      "sha256": "94667fb4bd9a962278c80d93b4bceb6e4e83c8c57ba14d86b558c51fa4e2b274"
+    },
+    {
+      "check": "Setup Regression",
+      "file": "setup-030-tests-output.json",
+      "passed": 49,
+      "total": 49,
+      "scope": "Account controls, migration, revocation, concurrency and real OAuth listing.",
+      "sha256": "499de5d8986cdada13a2766e7511872d9fe30d3ecfc16cce07b14fddee0cde1e"
+    },
+    {
+      "check": "Admin DOM",
+      "file": "setup-ui-dom-output.json",
+      "passed": 12,
+      "total": 12,
+      "scope": "PHP-rendered mode controls, help, labels and submit behavior.",
+      "sha256": "fdedc5b0204f2e9afc35b5f0d8b65cb1550aa56431e7b8c5214a6ad1c6938cc4"
+    },
+    {
+      "check": "OAuth Connections and Audit",
+      "file": "oauth-connections-audit-tests-output.json",
+      "passed": 26,
+      "total": 26,
+      "scope": "Lifecycle, client attribution, schema migration and error handling.",
+      "sha256": "196b5a7892ee9fa87c39e89cc4295adcfbad0bd96f8788d14d652a2feaa902a0"
+    },
+    {
+      "check": "OAuth Security",
+      "file": "oauth-tests-output.json",
+      "passed": 41,
+      "total": 41,
+      "scope": "PKCE, consent, redirect/resource binding, refresh replay and permissions.",
+      "sha256": "dd97e712223305ecadf989d1cf4b00caee3912885a84ea1e2ba7db27698e802a"
+    },
+    {
+      "check": "Gateway Auth and Approvals",
+      "file": "security-tests-output.json",
+      "passed": 17,
+      "total": 17,
+      "scope": "Authenticated Application Passwords, review ownership, expiry, tamper and audit boundaries.",
+      "sha256": "f297d8cecbbfae0ad3b664ebecea17e791d292c234116a8b4e84c1d91d7b52ea"
+    },
+    {
+      "check": "Design Review Regression",
+      "file": "page-design-approvals-tests-output.json",
+      "passed": 10,
+      "total": 10,
+      "scope": "Reviewed design lifecycle and installed-editor approval gate.",
+      "sha256": "9e0c52037ae3f513cb76b9f71c542a56f5088fbd6c3b9cb0f766dda4459a66e8"
+    },
+    {
+      "check": "HTTP YOLO Lifecycle",
+      "file": "oauth-http-normal-chatgpt-yolo-output.json",
+      "passed": 32,
+      "total": 32,
+      "scope": "SDK discovery, synthetic login/consent, direct draft, readback, status, refresh and replay.",
+      "sha256": "5635a3e2af6182019c4318cf27f72e7d8a53d01e7854edfce2f7b1d38aae57d6"
+    },
+    {
+      "check": "HTTP Read-Only Regression",
+      "file": "oauth-http-gridpane-static-claude-output.json",
+      "passed": 29,
+      "total": 29,
+      "scope": "Synthetic Claude callback with local static discovery proxy and read-only consent.",
+      "sha256": "c1761e29b4dfabaa5055b976c4d0de8c4f7a41ee8bbc99f851ea3787c8be4632"
+    },
+    {
+      "check": "PHP Syntax",
+      "file": "php-lint-0.3.1.json",
+      "passed": 69,
+      "total": 69,
+      "scope": "Plugin PHP and selected runtime fixtures; native harness syntax only.",
+      "sha256": "25ac58324477ab0b2b1cb643243be16545c117adb120ad7f2c84bbde5d246f7d"
+    },
+    {
+      "check": "JavaScript Syntax",
+      "file": "js-syntax-0.3.1.json",
+      "passed": 14,
+      "total": 14,
+      "scope": "Plugin JavaScript and selected runtime/test scripts.",
+      "sha256": "f68e0632d34dcce25e02879a9e85a8ccc7086004694ea859f69ab34acf89ab72"
+    }
+  ],
+  "not_executed": [
+    "Live staging update and actual ChatGPT/Claude OAuth connections",
+    "Native MySQL/MariaDB schema migration and concurrent InnoDB page writes",
+    "Real browser layout, consent and Gutenberg editing",
+    "WordPress 6.6 / PHP 8.1 minimum-version matrix and Kadence/extension matrix"
+  ]
+}

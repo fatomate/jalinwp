@@ -1,0 +1,5 @@
+{
+    "test": "yolo-metadata-tests.php",
+    "status": "passed",
+    "output": "{\n    \"passed\": 3,\n    \"total\": 3,\n    \"environment\": {\n        \"wordpress\": \"6.8.8\",\n        \"php\": \"8.3.32\",\n        \"database\": \"SQLite WordPress Integration\"\n    },\n    \"cases\": [\n        {\n            \"name\": \"read_only initialization, catalog, and validation describe the effective mode without changing content\",\n            \"pass\": true\n        },\n        {\n            \"name\": \"reviewed initialization, catalog, and validation describe the effective mode without changing content\",\n            \"pass\": true\n        },\n        {\n            \"name\": \"yolo initialization, catalog, and validation describe the effective mode without changing content\",\n            \"pass\": true\n        }\n    ]\n}"
+}

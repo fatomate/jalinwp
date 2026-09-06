@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; img-src &#39;self&#39; data:; style-src &#39;self&#39; &#39;unsafe-inline&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; connect-src &#39;none&#39;; form-action &#39;none&#39;; base-uri &#39;none&#39;"><title>JalinWP Preview — access</title><link rel="stylesheet" href="assets/wordpress/common.css"><link rel="stylesheet" href="assets/wordpress/forms.css"><link rel="stylesheet" href="assets/wordpress/list-tables.css"><link rel="stylesheet" href="assets/wordpress/buttons.css"><link rel="stylesheet" href="assets/brand.css"><link rel="stylesheet" href="assets/admin.css"><link rel="stylesheet" href="assets/finance.css"><style>body{margin:0;padding:20px 24px 48px;background:#f0f0f1}.jalin-preview-banner{max-width:1120px;margin:0 auto 20px;color:#55556A;font:13px/1.5 system-ui,sans-serif}.wrap.fg-wrap{margin-left:auto;margin-right:auto}@media(max-width:600px){body{padding:12px 12px 32px}}</style><script>document.addEventListener("submit",function(event){event.preventDefault();event.stopImmediatePropagation();},true);</script></head><body class="wp-admin wp-core-ui"><p class="jalin-preview-banner">Disposable WordPress Preview · Forms Do Not Submit · Synthetic Administrator and Settings</p>        <div class="wrap fg-wrap">
+            <header class="fg-header">
+                <div class="fg-brand-row">
+                    <h1 class="fg-brand-title"><img class="fg-brand-logo" src="assets/brand/jalinwp-logo-horizontal-white.png" alt="JalinWP"></h1>
+                    <span class="fg-version">0.3.3</span>
+                </div>
+                <p>Connect your AI workspace to WordPress and WooCommerce.</p>
+            </header>
+            <nav class="nav-tab-wrapper" aria-label="JalinWP Settings">
+                                    <a class="nav-tab " href="connect.html" >Connection Setup</a>
+                                    <a class="nav-tab " href="connections.html" >OAuth Connections</a>
+                                    <a class="nav-tab nav-tab-active" href="access.html" aria-current="page">Access Controls</a>
+                                    <a class="nav-tab " href="finance.html" >Finance Setup</a>
+                                    <a class="nav-tab " href="changes.html" >Changes &amp; Review</a>
+                                    <a class="nav-tab " href="audit.html" >Activity Log</a>
+                            </nav>
+                                                                                            <section class="fg-card" id="fg-access">
+            <h2>Access Controls</h2>
+                        <h3>Your Account</h3>
+                        <div class="fg-account-summary"><strong>admin</strong><span>admin</span><span class="fg-status fg-status-pass">Account Enabled</span></div>
+            <p class="description">Only explicitly enabled accounts can connect. Your WordPress and WooCommerce permissions continue to apply. MCP access is available to your account.</p>
+            <form action="#" method="post" class="fg-settings-form">
+                <input type="hidden" name="action" value="fg_save"><input type="hidden" id="_wpnonce" name="_wpnonce" value="preview-nonce" /><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-general.php?page=fames-mcp-gateway&#038;tab=access" />                <input type="hidden" name="settings_version" value="612c4a5addd4044c6fcd87b53fab00e3dc6c76778db6525329af01719c96db5d">
+                <fieldset id="fg-change-mode" class="fg-change-mode" aria-describedby="fg-change-mode-help">
+                    <legend><h3>Change Mode</h3></legend>
+                    <p class="description fg-mode-default">New setups start in Read Only. Choose another mode only when you want clients to make changes.</p>
+                                            <div class="fg-mode-option"><label for="fg-mode-readonly"><input id="fg-mode-readonly" type="radio" name="change_mode" value="readonly" aria-describedby="fg-mode-help-readonly"  checked='checked' required> <strong>Read Only</strong></label><p class="description" id="fg-mode-help-readonly">Retrieve permitted content and data. Clients cannot create, update, or apply changes.</p></div>
+                                            <div class="fg-mode-option"><label for="fg-mode-reviewed"><input id="fg-mode-reviewed" type="radio" name="change_mode" value="reviewed" aria-describedby="fg-mode-help-reviewed"  required> <strong>Reviewed Changes</strong></label><p class="description" id="fg-mode-help-reviewed">Clients propose edits. An administrator approves each request in WordPress before the requesting connection applies it. Requests expire after 15 minutes.</p></div>
+                                            <div class="fg-mode-option"><label for="fg-mode-yolo"><input id="fg-mode-yolo" type="radio" name="change_mode" value="yolo" aria-describedby="fg-mode-help-yolo"  required> <strong>YOLO Mode (No Dashboard Approval)</strong></label><p class="description" id="fg-mode-help-yolo">Clients can execute supported changes immediately. No approval in the WordPress dashboard is required. WordPress permissions, data access controls, validation, and activity logging still apply.</p></div>
+                                        <p class="description" id="fg-change-mode-help">Save Access Controls to apply the selected mode. Existing OAuth connections keep their approved permissions. After enabling YOLO Mode, reconnect each client once and approve direct changes during sign-in. Previously approved reviewed connections continue to require dashboard approval until then. Your AI client may still ask for its own confirmation.</p>
+                </fieldset>
+                <div class="fg-access-control"><label for="fg-access-sensitive"><input id="fg-access-sensitive" type="checkbox" name="sensitive" value="1" aria-describedby="fg-help-sensitive"  checked='checked'> <strong>Allow Order, Customer, Comment, And Financial Data Access</strong></label><p class="description" id="fg-help-sensitive">Allow access to these records and reports, subject to your WordPress and WooCommerce permissions. Leave this off when the connection only needs content access.</p></div>                <p class="description">Granting extra access requires reconnecting the client and approving the new access. Removing access takes effect immediately. Actual settings changes revoke unfinished change requests; saving unchanged values preserves them.</p>
+                <details class="fg-advanced"><summary>Advanced Access</summary>
+                    <div class="fg-access-control"><label for="fg-access-oauth_enabled"><input id="fg-access-oauth_enabled" type="checkbox" name="oauth_enabled" value="1" aria-describedby="fg-help-oauth_enabled"  checked='checked'> <strong>Enable OAuth Sign-In</strong></label><p class="description" id="fg-help-oauth_enabled">Allow compatible clients to connect by signing in to WordPress and approving access. Turning this off revokes existing OAuth connections.</p></div>                    <h3>Local Bridge And Application Passwords</h3>
+                    <p>For a local desktop or CLI client using the included bridge, create a WordPress Application Password on an enabled account's profile, then follow <code>bridge/README.md</code> in the source package.</p>
+                    <p><a href="#">Manage Your Application Passwords</a></p>
+                    <p class="description">An Application Password inherits the account's WordPress permissions, including the standard REST API outside this gateway. Use an account with the permissions you intend to grant.</p>
+                    <h3><label for="fg-origins">Allowed Browser Origins</label></h3><textarea id="fg-origins" name="origins" rows="3" class="large-text code" aria-describedby="fg-origins-help" maxlength="6000"></textarea>
+                    <p class="description" id="fg-origins-help">Usually leave blank for ChatGPT, Claude, and the local bridge. Add at most 20 exact HTTPS origins only when required by your client. Paths, trailing slashes, and wildcards are not supported. This setting is separate from OAuth redirect URLs.</p>
+                </details>
+                <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Access Controls"  /></p>            </form>
+                    </section>
+                </div>
+        <script src="assets/admin.js"></script><script src="assets/finance.js"></script></body></html>

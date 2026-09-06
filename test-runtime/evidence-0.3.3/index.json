@@ -1,0 +1,88 @@
+{
+  "release": "0.3.3",
+  "date": "2026-09-06",
+  "checks": [
+    {
+      "name": "Admin Tabs, Defaults, And Actions",
+      "passed": 59,
+      "total": 59,
+      "file": "admin-033-tests-output.json",
+      "sha256": "d1c55d2601d4a16d7c37164be91e7e87748e4b9ce2988b6818b19852d9565ea2"
+    },
+    {
+      "name": "Admin DOM Submission Behavior",
+      "passed": 8,
+      "total": 8,
+      "file": "admin-033-dom-output.json",
+      "sha256": "dd127d751ad2173ad98c889094ceac9a03e8c4def25b93e5857b6865f9da9463"
+    },
+    {
+      "name": "OAuth Connection Cleanup",
+      "passed": 16,
+      "total": 16,
+      "file": "oauth-cleanup-tests-output.json",
+      "sha256": "d1278ad0cc791b37744c8824e78c7602b8c2967cf86a15f497fc7bf263b74544"
+    },
+    {
+      "name": "Connection And Access Regression",
+      "passed": 49,
+      "total": 49,
+      "file": "setup-030-tests-output.json",
+      "sha256": "3daaf2db3835e4eded2aa37334428a3b84a99aaa6a2d773b9449bc3c847cebb9"
+    },
+    {
+      "name": "YOLO Settings Regression",
+      "passed": 37,
+      "total": 37,
+      "file": "setup-yolo-tests-output.json",
+      "sha256": "30b10216cacdeed8a85c746c2e4fd15375f9cfb9d1ea590e3031862463e18f4c"
+    },
+    {
+      "name": "OAuth Security",
+      "passed": 41,
+      "total": 41,
+      "file": "oauth-tests-output.json",
+      "sha256": "dd97e712223305ecadf989d1cf4b00caee3912885a84ea1e2ba7db27698e802a"
+    },
+    {
+      "name": "OAuth Lifecycle And Audit",
+      "passed": 26,
+      "total": 26,
+      "file": "oauth-connections-audit-tests-output.json",
+      "sha256": "196b5a7892ee9fa87c39e89cc4295adcfbad0bd96f8788d14d652a2feaa902a0"
+    },
+    {
+      "name": "Finance Admin Regression",
+      "passed": 62,
+      "total": 62,
+      "file": "finance-admin-tests-output.json",
+      "sha256": "60ed5f8eff568b0722ce1ea28469242e57dfe415e9e08f0b9768a1a711dbb808"
+    },
+    {
+      "name": "HTTP OAuth And YOLO Lifecycle",
+      "passed": 33,
+      "total": 33,
+      "file": "oauth-http-normal-chatgpt-yolo-output.json",
+      "sha256": "02cc48f8d89a623bae303818839a210f400d1892c97d2a974fc67a3fd96ebfcd"
+    },
+    {
+      "name": "PHP-Rendered Brand Screens",
+      "passed": 66,
+      "total": 66,
+      "file": "brand-verification.json",
+      "sha256": "c2f1ce441b5aa24983ea8ac8c0b47593ea50944b47dbe101114462e3c42b4b1d"
+    },
+    {
+      "name": "Changed Production PHP And JavaScript Syntax",
+      "passed": 5,
+      "total": 5,
+      "file": "syntax-033-output.json",
+      "sha256": "f59ea689c264cfdc437f6b142ba130c35051934330b70f02cb48bb1a8d80549d"
+    }
+  ],
+  "not_run": [
+    "Visual desktop/mobile browser inspection: environment blocks local preview URLs",
+    "Live staging deployment and actual ChatGPT/Claude client connection",
+    "Native MySQL/MariaDB and full supported version matrix"
+  ]
+}

@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; img-src &#39;self&#39; data:; style-src &#39;self&#39; &#39;unsafe-inline&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; connect-src &#39;none&#39;; form-action &#39;none&#39;; base-uri &#39;none&#39;"><title>JalinWP Preview — connect-disabled</title><link rel="stylesheet" href="assets/wordpress/common.css"><link rel="stylesheet" href="assets/wordpress/forms.css"><link rel="stylesheet" href="assets/wordpress/list-tables.css"><link rel="stylesheet" href="assets/wordpress/buttons.css"><link rel="stylesheet" href="assets/brand.css"><link rel="stylesheet" href="assets/admin.css"><link rel="stylesheet" href="assets/finance.css"><style>body{margin:0;padding:20px 24px 48px;background:#f0f0f1}.jalin-preview-banner{max-width:1120px;margin:0 auto 20px;color:#55556A;font:13px/1.5 system-ui,sans-serif}.wrap.fg-wrap{margin-left:auto;margin-right:auto}@media(max-width:600px){body{padding:12px 12px 32px}}</style><script>document.addEventListener("submit",function(event){event.preventDefault();event.stopImmediatePropagation();},true);</script></head><body class="wp-admin wp-core-ui"><p class="jalin-preview-banner">Disposable WordPress Preview · Forms Do Not Submit · Synthetic Administrator and Settings</p>        <div class="wrap fg-wrap">
+            <header class="fg-header">
+                <div class="fg-brand-row">
+                    <h1 class="fg-brand-title"><img class="fg-brand-logo" src="assets/brand/jalinwp-logo-horizontal-white.png" alt="JalinWP"></h1>
+                    <span class="fg-version">0.3.3</span>
+                </div>
+                <p>Connect your AI workspace to WordPress and WooCommerce.</p>
+            </header>
+            <nav class="nav-tab-wrapper" aria-label="JalinWP Settings">
+                                    <a class="nav-tab nav-tab-active" href="connect.html" aria-current="page">Connection Setup</a>
+                                    <a class="nav-tab " href="connections.html" >OAuth Connections</a>
+                                    <a class="nav-tab " href="access.html" >Access Controls</a>
+                                    <a class="nav-tab " href="finance.html" >Finance Setup</a>
+                                    <a class="nav-tab " href="changes.html" >Changes &amp; Review</a>
+                                    <a class="nav-tab " href="audit.html" >Activity Log</a>
+                            </nav>
+                                                                                            <section class="fg-card fg-connect-card" aria-labelledby="fg-connect-title">
+            <div class="fg-section-heading"><div><span class="fg-kicker">Start Here</span><h2 id="fg-connect-title">Connect In Three Steps</h2></div><span class="fg-status fg-status-warning">MCP Disabled</span></div>
+            <p class="fg-current-mode"><strong>Change Mode:</strong> Read Only <a href="access.html">Change Mode Settings</a></p>
+            <p>Connect ChatGPT or Claude directly to this site. Sign in with WordPress when prompted and approve the access shown.</p>
+            <ol class="fg-steps">
+                <li><div class="fg-step-number" aria-hidden="true">1</div><div><h3>Your MCP Connection</h3>
+                    <p>Enable MCP and OAuth sign-in for your current administrator account.</p>
+                    <form class="fg-immediate-action" method="post" action="#"><input type="hidden" name="action" value="fg_quick_connect"><input type="hidden" id="_wpnonce" name="_wpnonce" value="preview-nonce" /><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-general.php?page=fames-mcp-gateway&#038;tab=connect" /><input type="hidden" name="settings_version" value="49e90bc0c7dbc48e556ee6b47dcb1f89fbcaffd59ab7bc05e07e8867bbd7113c"><button class="button button-primary" type="submit">Enable For My Account</button></form>                                                            <p class="description">Order and financial data access, and change requests, stay as configured in <a href="access.html">Access Controls</a>. Enable each explicitly when needed.</p>
+                </div></li>
+                <li><div class="fg-step-number" aria-hidden="true">2</div><div><h3>Copy Your Connector URL</h3><label class="screen-reader-text" for="fg-endpoint">MCP Server URL</label>
+                    <div class="fg-copy-row"><input id="fg-endpoint" class="large-text code" type="url" readonly value="https://127.0.0.1:35485/wp-json/fames-mcp/v1/mcp" spellcheck="false"><button type="button" class="button fg-copy-button" data-copy-target="fg-endpoint" hidden>Copy URL</button></div><span id="fg-copy-status" class="fg-inline-status" role="status" aria-live="polite"></span>
+                </div></li>
+                <li><div class="fg-step-number" aria-hidden="true">3</div><div><h3>Add The Connector In ChatGPT Or Claude</h3>
+                    <p>In your AI client's app, plugin or connector settings, create a custom MCP connection. Paste the URL above and select <strong>OAuth</strong>. Leave <strong>OAuth Client ID</strong> and <strong>Client Secret</strong> blank for automatic registration.</p>
+                    <p>Click <strong>Connect</strong>, sign in to this WordPress site with an allowed account, and approve the requested access. You will then return to your AI client.</p>
+                    <p class="description">If your earlier connector still shows a registration error after updating this plugin, run the checks below and recreate the connector with OAuth and blank client credentials.</p>
+                </div></li>
+            </ol>
+                            <details class="fg-advanced"><summary>Advanced OAuth Settings</summary>
+                    <p>Automatic discovery is the default. If your client offers manual OAuth configuration, copy these public settings. Keep automatic client registration enabled, leave Client ID and Client Secret blank, and use the exact server URL above.</p>
+                                            <p><label for="fg-oauth-issuer"><strong>Issuer</strong></label><br><input id="fg-oauth-issuer" type="text" class="large-text code" readonly value="https://127.0.0.1:35485/wp-json/fames-mcp/v1/oauth/issuer.json" spellcheck="false"></p>
+                                            <p><label for="fg-oauth-authorization_endpoint"><strong>Authorization URL</strong></label><br><input id="fg-oauth-authorization_endpoint" type="text" class="large-text code" readonly value="https://127.0.0.1:35485/wp-admin/admin-post.php?action=fg_oauth_authorize" spellcheck="false"></p>
+                                            <p><label for="fg-oauth-token_endpoint"><strong>Token URL</strong></label><br><input id="fg-oauth-token_endpoint" type="text" class="large-text code" readonly value="https://127.0.0.1:35485/wp-json/fames-mcp/v1/oauth/token" spellcheck="false"></p>
+                                            <p><label for="fg-oauth-registration_endpoint"><strong>Registration URL</strong></label><br><input id="fg-oauth-registration_endpoint" type="text" class="large-text code" readonly value="https://127.0.0.1:35485/wp-json/fames-mcp/v1/oauth/register" spellcheck="false"></p>
+                                            <p><label for="fg-oauth-scope"><strong>Scope</strong></label><br><input id="fg-oauth-scope" type="text" class="large-text code" readonly value="mcp" spellcheck="false"></p>
+                                        <p class="description">Manual settings cannot bypass a blocked registration, token or sign-in endpoint. Run the connection checks and trace below if setup still fails.</p>
+                </details>
+                    </section>
+        <section id="fg-checks" class="fg-card" aria-labelledby="fg-checks-title">
+            <div class="fg-section-heading"><div><h2 id="fg-checks-title">Connection Checks</h2><p>Check HTTPS, gateway settings and the sign-in discovery URLs used by MCP clients.</p></div>
+                <form id="fg-check-form" action="#" method="post"><input type="hidden" name="action" value="fg_connection_check"><input type="hidden" id="_wpnonce" name="_wpnonce" value="preview-nonce" /><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-general.php?page=fames-mcp-gateway&#038;tab=connect" /><button class="button" type="submit">Check Connection</button></form>
+            </div>
+            <p id="fg-check-status" class="fg-inline-status" role="status" aria-live="polite">Run these checks if ChatGPT or Claude cannot register or connect.</p>
+            <div id="fg-check-results"></div>
+            <p class="description">These checks run from your WordPress host. A successful check does not confirm that your AI client has connected or that your host permits its requests.</p>
+        </section>
+                    <section id="fg-trace" class="fg-card" aria-labelledby="fg-trace-title"><h2 id="fg-trace-title">Troubleshoot A Connection Attempt</h2>
+                <p>Start a temporary trace, retry connecting once in ChatGPT or Claude, then download the report to share with support. The report includes public connection URLs, the last check statuses and up to 50 recent request summaries.</p>
+                <p><strong>Trace is off.</strong> 0 request summaries available.</p>
+                <form action="#" method="post"><input type="hidden" name="action" value="fg_start_connection_trace"><input type="hidden" id="_wpnonce" name="_wpnonce" value="preview-nonce" /><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-general.php?page=fames-mcp-gateway&#038;tab=connect" /><button class="button" type="submit">Start 15-Minute Connection Trace</button></form>
+                <form action="#" method="post"><input type="hidden" name="action" value="fg_connection_report"><input type="hidden" id="_wpnonce" name="_wpnonce" value="preview-nonce" /><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-general.php?page=fames-mcp-gateway&#038;tab=connect" /><p><button class="button" type="submit">Download Connection Report</button></p></form>
+                <p class="description">The trace records only request stage, method, HTTP status, a fixed error category, authentication scheme and callback family. It excludes credentials, request bodies, account data and IP addresses. Recording stops after 15 minutes; summaries expire after 24 hours and cleanup runs through WordPress scheduled tasks.</p>
+                <p class="description">Only REST requests reaching WordPress are visible. Requests blocked before PHP, static discovery files and browser sign-in/consent are not captured. Host self-checks may appear in the trace; rapid requests may be omitted.</p>
+            </section>
+                        </div>
+        <script src="assets/admin.js"></script><script src="assets/finance.js"></script></body></html>

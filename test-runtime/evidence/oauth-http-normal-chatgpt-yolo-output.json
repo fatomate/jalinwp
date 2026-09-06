@@ -1,0 +1,165 @@
+{
+  "status": "passed",
+  "mode": "normal",
+  "clientType": "chatgpt",
+  "writeMode": "yolo",
+  "passed": 32,
+  "total": 32,
+  "cases": [
+    {
+      "name": "Disposable HTTP server starts with plugin enabled",
+      "pass": true
+    },
+    {
+      "name": "Normal host preserves legacy root discovery",
+      "pass": true
+    },
+    {
+      "name": "Official SDK proactively discovers the issuer from only the MCP URL before any 401 challenge",
+      "pass": true
+    },
+    {
+      "name": "Proactive discovery uses the path-specific protected resource and RFC8414 issuer documents",
+      "pass": true
+    },
+    {
+      "name": "MCP HTTP 401 advertises Bearer resource metadata",
+      "pass": true
+    },
+    {
+      "name": "Protected resource discovery matches MCP audience and stable REST issuer",
+      "pass": true
+    },
+    {
+      "name": "Official MCP SDK discovers exact issuer and mandatory S256 metadata",
+      "pass": true
+    },
+    {
+      "name": "Official SDK uses first standard discovery URL when host permits it",
+      "pass": true
+    },
+    {
+      "name": "Canonical RFC8414 discovery route returns the stable issuer and registration endpoint",
+      "pass": true
+    },
+    {
+      "name": "REST metadata responses remain uncached",
+      "pass": true
+    },
+    {
+      "name": "HTTP dynamic client registration succeeds without manually provisioned credentials",
+      "pass": true
+    },
+    {
+      "name": "Authorization sends an anonymous user to native WordPress login",
+      "pass": true
+    },
+    {
+      "name": "Native WordPress login succeeds using the synthetic account",
+      "pass": true
+    },
+    {
+      "name": "Authenticated authorization renders an explicit consent form",
+      "pass": true
+    },
+    {
+      "name": "Consent explicitly describes YOLO access without dashboard approval",
+      "pass": true
+    },
+    {
+      "name": "Consent page CSP permits only this registered client origin and same-site forms",
+      "pass": true
+    },
+    {
+      "name": "Consent contains a named approval control",
+      "pass": true
+    },
+    {
+      "name": "Consent returns a code, state and exact issuer to the registered chatgpt callback",
+      "pass": true
+    },
+    {
+      "name": "Consent POST redirect preserves the same restrictive client-specific CSP",
+      "pass": true
+    },
+    {
+      "name": "HTTP authorization code exchange returns access and refresh tokens",
+      "pass": true
+    },
+    {
+      "name": "Bearer token initializes MCP through a real HTTP request",
+      "pass": true
+    },
+    {
+      "name": "Consented OAuth connection advertises immediate YOLO writes",
+      "pass": true
+    },
+    {
+      "name": "OAuth write applies in its original HTTP tool call without dashboard approval",
+      "pass": true
+    },
+    {
+      "name": "Applied YOLO change is visible to its OAuth connection",
+      "pass": true
+    },
+    {
+      "name": "Reviewed apply tool cannot repeat the YOLO change",
+      "pass": true
+    },
+    {
+      "name": "Created OAuth draft can be read in the next request",
+      "pass": true
+    },
+    {
+      "name": "OAuth grant executes a WordPress read tool over HTTP",
+      "pass": true
+    },
+    {
+      "name": "Gateway bearer does not authenticate ordinary WordPress REST routes",
+      "pass": true
+    },
+    {
+      "name": "HTTP refresh rotates the refresh token",
+      "pass": true
+    },
+    {
+      "name": "Refreshed access token remains usable",
+      "pass": true
+    },
+    {
+      "name": "Reused refresh token is rejected",
+      "pass": true
+    },
+    {
+      "name": "Refresh replay revokes the associated active access grant",
+      "pass": true
+    }
+  ],
+  "proactiveDiscoveryAttempts": [
+    {
+      "path": "/.well-known/oauth-protected-resource/wp-json/fames-mcp/v1/mcp",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8"
+    },
+    {
+      "path": "/.well-known/oauth-authorization-server/wp-json/fames-mcp/v1/oauth/issuer.json",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8"
+    }
+  ],
+  "discoveryAttempts": [
+    {
+      "path": "/.well-known/oauth-authorization-server/wp-json/fames-mcp/v1/oauth/issuer.json",
+      "status": 200
+    }
+  ],
+  "discoveryClient": "@modelcontextprotocol/sdk 1.30.0",
+  "blockedRequests": 0,
+  "staticRequests": 0,
+  "stack": "WordPress 6.8.8 / PHP 8.3 / SQLite / local HTTP reverse proxy with fixture-only HTTPS recognition",
+  "limits": [
+    "Not a live GridPane host, native MySQL, real TLS, browser automation or actual ChatGPT/Claude connection.",
+    "Official MCP SDK exercises discovery only. The remaining OAuth flow uses a local synthetic HTTP client with the documented hosted callback. No authorization code is sent to the real callback.",
+    "GridPane-static mode models an unanchored well-known path interception serving two owned metadata files, including extensionless JSON as application/octet-stream; host-specific WAF/CDN policies are not simulated."
+  ]
+}

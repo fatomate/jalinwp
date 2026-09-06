@@ -1,0 +1,916 @@
+{
+    "media": {
+        "4": "http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png"
+    },
+    "fixtures": [
+        {
+            "name": "heading",
+            "blocks": [
+                {
+                    "name": "core/heading",
+                    "attributes": {
+                        "content": "Hero & benefits",
+                        "level": 1,
+                        "textAlign": "center",
+                        "align": "wide",
+                        "anchor": "heading",
+                        "style": {
+                            "color": {
+                                "text": "#102030",
+                                "background": "#eeeeee"
+                            },
+                            "spacing": {
+                                "margin": {
+                                    "top": "10px",
+                                    "bottom": "5px"
+                                },
+                                "padding": {
+                                    "top": "20px",
+                                    "right": "2rem",
+                                    "bottom": "20px",
+                                    "left": "2rem"
+                                }
+                            },
+                            "typography": {
+                                "fontSize": "22px",
+                                "fontWeight": "700",
+                                "letterSpacing": "1px",
+                                "lineHeight": "1.5"
+                            }
+                        }
+                    },
+                    "innerBlocks": []
+                }
+            ],
+            "markup": "<!-- wp:heading {\"level\":1,\"textAlign\":\"center\",\"align\":\"wide\",\"style\":{\"color\":{\"text\":\"#102030\",\"background\":\"#eeeeee\"},\"spacing\":{\"margin\":{\"top\":\"10px\",\"bottom\":\"5px\"},\"padding\":{\"top\":\"20px\",\"right\":\"2rem\",\"bottom\":\"20px\",\"left\":\"2rem\"}},\"typography\":{\"fontSize\":\"22px\",\"fontWeight\":\"700\",\"letterSpacing\":\"1px\",\"lineHeight\":\"1.5\"}}} --><h1 class=\"wp-block-heading alignwide has-text-align-center has-text-color has-background\" id=\"heading\" style=\"color:#102030;background-color:#eeeeee;margin-top:10px;margin-bottom:5px;padding-top:20px;padding-right:2rem;padding-bottom:20px;padding-left:2rem;font-size:22px;font-weight:700;letter-spacing:1px;line-height:1.5\">Hero &amp; benefits</h1><!-- /wp:heading -->"
+        },
+        {
+            "name": "paragraph",
+            "blocks": [
+                {
+                    "name": "core/paragraph",
+                    "attributes": {
+                        "content": "Body \"copy\", caf\u00e9 & detail.",
+                        "align": "right",
+                        "style": {
+                            "color": {
+                                "text": "#102030",
+                                "background": "#eeeeee"
+                            },
+                            "spacing": {
+                                "margin": {
+                                    "top": "10px",
+                                    "bottom": "5px"
+                                },
+                                "padding": {
+                                    "top": "20px",
+                                    "right": "2rem",
+                                    "bottom": "20px",
+                                    "left": "2rem"
+                                }
+                            },
+                            "typography": {
+                                "fontSize": "22px",
+                                "fontWeight": "700",
+                                "letterSpacing": "1px",
+                                "lineHeight": "1.5"
+                            }
+                        }
+                    },
+                    "innerBlocks": []
+                }
+            ],
+            "markup": "<!-- wp:paragraph {\"align\":\"right\",\"style\":{\"color\":{\"text\":\"#102030\",\"background\":\"#eeeeee\"},\"spacing\":{\"margin\":{\"top\":\"10px\",\"bottom\":\"5px\"},\"padding\":{\"top\":\"20px\",\"right\":\"2rem\",\"bottom\":\"20px\",\"left\":\"2rem\"}},\"typography\":{\"fontSize\":\"22px\",\"fontWeight\":\"700\",\"letterSpacing\":\"1px\",\"lineHeight\":\"1.5\"}}} --><p class=\"has-text-align-right has-text-color has-background\" style=\"color:#102030;background-color:#eeeeee;margin-top:10px;margin-bottom:5px;padding-top:20px;padding-right:2rem;padding-bottom:20px;padding-left:2rem;font-size:22px;font-weight:700;letter-spacing:1px;line-height:1.5\">Body &quot;copy&quot;, caf\u00e9 &amp; detail.</p><!-- /wp:paragraph -->"
+        },
+        {
+            "name": "literal-entities",
+            "blocks": [
+                {
+                    "name": "core/paragraph",
+                    "attributes": {
+                        "content": "Literal &amp; and &lt; are plain text."
+                    },
+                    "innerBlocks": []
+                },
+                {
+                    "name": "core/image",
+                    "attributes": {
+                        "id": 4,
+                        "alt": "Literal & character",
+                        "caption": "Literal &amp;"
+                    },
+                    "innerBlocks": []
+                },
+                {
+                    "name": "core/buttons",
+                    "attributes": [],
+                    "innerBlocks": [
+                        {
+                            "name": "core/button",
+                            "attributes": {
+                                "text": "Literal &amp;",
+                                "url": "https://example.com/?literal=%26amp%3B"
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:paragraph --><p>Literal &amp;amp; and &amp;lt; are plain text.</p><!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":4} --><figure class=\"wp-block-image\"><img src=\"http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png\" alt=\"Literal &amp; character\" class=\"wp-image-4\"/><figcaption class=\"wp-element-caption\">Literal &amp;amp;</figcaption></figure><!-- /wp:image -->\n\n<!-- wp:buttons --><div class=\"wp-block-buttons\"><!-- wp:button --><div class=\"wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"https://example.com/?literal=%26amp%3B\">Literal &amp;amp;</a></div><!-- /wp:button --></div><!-- /wp:buttons -->"
+        },
+        {
+            "name": "group",
+            "blocks": [
+                {
+                    "name": "core/group",
+                    "attributes": {
+                        "tagName": "section",
+                        "align": "full",
+                        "layout": {
+                            "type": "constrained",
+                            "contentSize": "1000px"
+                        },
+                        "anchor": "hero",
+                        "style": {
+                            "color": {
+                                "text": "#102030",
+                                "background": "#eeeeee"
+                            },
+                            "spacing": {
+                                "margin": {
+                                    "top": "10px",
+                                    "bottom": "5px"
+                                },
+                                "padding": {
+                                    "top": "20px",
+                                    "right": "2rem",
+                                    "bottom": "20px",
+                                    "left": "2rem"
+                                }
+                            },
+                            "typography": {
+                                "fontSize": "22px",
+                                "fontWeight": "700",
+                                "letterSpacing": "1px",
+                                "lineHeight": "1.5"
+                            }
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:group {\"tagName\":\"section\",\"align\":\"full\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1000px\"},\"style\":{\"color\":{\"text\":\"#102030\",\"background\":\"#eeeeee\"},\"spacing\":{\"margin\":{\"top\":\"10px\",\"bottom\":\"5px\"},\"padding\":{\"top\":\"20px\",\"right\":\"2rem\",\"bottom\":\"20px\",\"left\":\"2rem\"}},\"typography\":{\"fontSize\":\"22px\",\"fontWeight\":\"700\",\"letterSpacing\":\"1px\",\"lineHeight\":\"1.5\"}}} --><section class=\"wp-block-group alignfull has-text-color has-background\" id=\"hero\" style=\"color:#102030;background-color:#eeeeee;margin-top:10px;margin-bottom:5px;padding-top:20px;padding-right:2rem;padding-bottom:20px;padding-left:2rem;font-size:22px;font-weight:700;letter-spacing:1px;line-height:1.5\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></section><!-- /wp:group -->"
+        },
+        {
+            "name": "stack",
+            "blocks": [
+                {
+                    "name": "core/group",
+                    "attributes": {
+                        "layout": {
+                            "type": "flex",
+                            "orientation": "vertical",
+                            "justifyContent": "center"
+                        },
+                        "style": {
+                            "spacing": {
+                                "blockGap": "1rem"
+                            }
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"vertical\",\"justifyContent\":\"center\"},\"style\":{\"spacing\":{\"blockGap\":\"1rem\"}}} --><div class=\"wp-block-group\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div><!-- /wp:group -->"
+        },
+        {
+            "name": "row",
+            "blocks": [
+                {
+                    "name": "core/group",
+                    "attributes": {
+                        "layout": {
+                            "type": "flex",
+                            "orientation": "horizontal",
+                            "justifyContent": "space-between",
+                            "flexWrap": "wrap"
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                            },
+                            "innerBlocks": []
+                        },
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:group {\"layout\":{\"type\":\"flex\",\"orientation\":\"horizontal\",\"justifyContent\":\"space-between\",\"flexWrap\":\"wrap\"}} --><div class=\"wp-block-group\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div><!-- /wp:group -->"
+        },
+        {
+            "name": "columns",
+            "blocks": [
+                {
+                    "name": "core/columns",
+                    "attributes": {
+                        "verticalAlignment": "center",
+                        "isStackedOnMobile": false,
+                        "style": {
+                            "color": {
+                                "text": "#102030",
+                                "background": "#eeeeee"
+                            },
+                            "spacing": {
+                                "margin": {
+                                    "top": "10px",
+                                    "bottom": "5px"
+                                },
+                                "padding": {
+                                    "top": "20px",
+                                    "right": "2rem",
+                                    "bottom": "20px",
+                                    "left": "2rem"
+                                }
+                            },
+                            "typography": {
+                                "fontSize": "22px",
+                                "fontWeight": "700",
+                                "letterSpacing": "1px",
+                                "lineHeight": "1.5"
+                            }
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/column",
+                            "attributes": {
+                                "width": "40%",
+                                "verticalAlignment": "bottom",
+                                "style": {
+                                    "spacing": {
+                                        "padding": {
+                                            "top": "20px"
+                                        }
+                                    },
+                                    "typography": {
+                                        "fontSize": "22px"
+                                    }
+                                }
+                            },
+                            "innerBlocks": [
+                                {
+                                    "name": "core/paragraph",
+                                    "attributes": {
+                                        "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                                    },
+                                    "innerBlocks": []
+                                }
+                            ]
+                        },
+                        {
+                            "name": "core/column",
+                            "attributes": {
+                                "width": "60%"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "name": "core/paragraph",
+                                    "attributes": {
+                                        "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                                    },
+                                    "innerBlocks": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:columns {\"verticalAlignment\":\"center\",\"isStackedOnMobile\":false,\"style\":{\"color\":{\"text\":\"#102030\",\"background\":\"#eeeeee\"},\"spacing\":{\"margin\":{\"top\":\"10px\",\"bottom\":\"5px\"},\"padding\":{\"top\":\"20px\",\"right\":\"2rem\",\"bottom\":\"20px\",\"left\":\"2rem\"}},\"typography\":{\"fontSize\":\"22px\",\"fontWeight\":\"700\",\"letterSpacing\":\"1px\",\"lineHeight\":\"1.5\"}}} --><div class=\"wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile has-text-color has-background\" style=\"color:#102030;background-color:#eeeeee;margin-top:10px;margin-bottom:5px;padding-top:20px;padding-right:2rem;padding-bottom:20px;padding-left:2rem;font-size:22px;font-weight:700;letter-spacing:1px;line-height:1.5\"><!-- wp:column {\"width\":\"40%\",\"verticalAlignment\":\"bottom\",\"style\":{\"spacing\":{\"padding\":{\"top\":\"20px\"}},\"typography\":{\"fontSize\":\"22px\"}}} --><div class=\"wp-block-column is-vertically-aligned-bottom\" style=\"padding-top:20px;font-size:22px;flex-basis:40%\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div><!-- /wp:column -->\n\n<!-- wp:column {\"width\":\"60%\"} --><div class=\"wp-block-column\" style=\"flex-basis:60%\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div><!-- /wp:column --></div><!-- /wp:columns -->"
+        },
+        {
+            "name": "image",
+            "blocks": [
+                {
+                    "name": "core/image",
+                    "attributes": {
+                        "id": 4,
+                        "alt": "A & B",
+                        "caption": "Caption & more",
+                        "sizeSlug": "full",
+                        "align": "center",
+                        "anchor": "photo",
+                        "style": {
+                            "spacing": {
+                                "margin": {
+                                    "top": "20px",
+                                    "bottom": "10px"
+                                }
+                            }
+                        }
+                    },
+                    "innerBlocks": []
+                }
+            ],
+            "markup": "<!-- wp:image {\"id\":4,\"sizeSlug\":\"full\",\"align\":\"center\",\"style\":{\"spacing\":{\"margin\":{\"top\":\"20px\",\"bottom\":\"10px\"}}}} --><figure class=\"wp-block-image aligncenter size-full\" id=\"photo\" style=\"margin-top:20px;margin-bottom:10px\"><img src=\"http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png\" alt=\"A &amp; B\" class=\"wp-image-4\"/><figcaption class=\"wp-element-caption\">Caption &amp; more</figcaption></figure><!-- /wp:image -->"
+        },
+        {
+            "name": "cover",
+            "blocks": [
+                {
+                    "name": "core/cover",
+                    "attributes": {
+                        "id": 4,
+                        "alt": "Cover & more",
+                        "dimRatio": 55,
+                        "customOverlayColor": "#102030",
+                        "minHeight": 400,
+                        "minHeightUnit": "px",
+                        "contentPosition": "bottom right",
+                        "align": "full",
+                        "anchor": "cover",
+                        "style": {
+                            "color": {
+                                "text": "#ffffff"
+                            },
+                            "spacing": {
+                                "padding": {
+                                    "top": "40px",
+                                    "bottom": "40px"
+                                }
+                            }
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:cover {\"url\":\"http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png\",\"id\":4,\"alt\":\"Cover \\u0026 more\",\"dimRatio\":55,\"customOverlayColor\":\"#102030\",\"minHeight\":400,\"minHeightUnit\":\"px\",\"contentPosition\":\"bottom right\",\"align\":\"full\",\"style\":{\"color\":{\"text\":\"#ffffff\"},\"spacing\":{\"padding\":{\"top\":\"40px\",\"bottom\":\"40px\"}}}} --><div class=\"wp-block-cover alignfull has-custom-content-position is-position-bottom-right has-text-color\" id=\"cover\" style=\"color:#ffffff;padding-top:40px;padding-bottom:40px;min-height:400px\"><img class=\"wp-block-cover__image-background wp-image-4\" alt=\"Cover &amp; more\" src=\"http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png\" data-object-fit=\"cover\"/><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim-60 has-background-dim\" style=\"background-color:#102030\"></span><div class=\"wp-block-cover__inner-container\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div></div><!-- /wp:cover -->"
+        },
+        {
+            "name": "cover-solid",
+            "blocks": [
+                {
+                    "name": "core/cover",
+                    "attributes": {
+                        "dimRatio": 0,
+                        "customOverlayColor": "#ffffff",
+                        "minHeight": 70,
+                        "minHeightUnit": "vh",
+                        "contentPosition": "top left",
+                        "isDark": false
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:cover {\"dimRatio\":0,\"customOverlayColor\":\"#ffffff\",\"minHeight\":70,\"minHeightUnit\":\"vh\",\"contentPosition\":\"top left\",\"isDark\":false} --><div class=\"wp-block-cover is-light has-custom-content-position is-position-top-left\" style=\"min-height:70vh\"><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim-0 has-background-dim\" style=\"background-color:#ffffff\"></span><div class=\"wp-block-cover__inner-container\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div></div><!-- /wp:cover -->"
+        },
+        {
+            "name": "buttons",
+            "blocks": [
+                {
+                    "name": "core/buttons",
+                    "attributes": {
+                        "layout": {
+                            "type": "flex",
+                            "justifyContent": "center"
+                        },
+                        "style": {
+                            "color": {
+                                "background": "#ffffff"
+                            },
+                            "typography": {
+                                "fontSize": "20px"
+                            }
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/button",
+                            "attributes": {
+                                "text": "Buy & save",
+                                "url": "https://example.com/?x=1&y=2",
+                                "linkTarget": "_blank",
+                                "width": 100,
+                                "textAlign": "center",
+                                "anchor": "buy",
+                                "style": {
+                                    "color": {
+                                        "text": "#102030",
+                                        "background": "#eeeeee"
+                                    },
+                                    "spacing": {
+                                        "padding": {
+                                            "top": "20px",
+                                            "right": "2rem",
+                                            "bottom": "20px",
+                                            "left": "2rem"
+                                        }
+                                    },
+                                    "typography": {
+                                        "fontSize": "22px",
+                                        "fontWeight": "700",
+                                        "letterSpacing": "1px",
+                                        "lineHeight": "1.5"
+                                    }
+                                }
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:buttons {\"layout\":{\"type\":\"flex\",\"justifyContent\":\"center\"},\"style\":{\"color\":{\"background\":\"#ffffff\"},\"typography\":{\"fontSize\":\"20px\"}}} --><div class=\"wp-block-buttons has-custom-font-size has-background\" style=\"background-color:#ffffff;font-size:20px\"><!-- wp:button {\"width\":100,\"textAlign\":\"center\",\"style\":{\"color\":{\"text\":\"#102030\",\"background\":\"#eeeeee\"},\"spacing\":{\"padding\":{\"top\":\"20px\",\"right\":\"2rem\",\"bottom\":\"20px\",\"left\":\"2rem\"}},\"typography\":{\"fontSize\":\"22px\",\"fontWeight\":\"700\",\"letterSpacing\":\"1px\",\"lineHeight\":\"1.5\"}}} --><div class=\"wp-block-button has-custom-width wp-block-button__width-100\" id=\"buy\"><a class=\"wp-block-button__link has-text-color has-background has-text-align-center has-custom-font-size wp-element-button\" style=\"color:#102030;background-color:#eeeeee;padding-top:20px;padding-right:2rem;padding-bottom:20px;padding-left:2rem;font-size:22px;font-weight:700;letter-spacing:1px;line-height:1.5\" href=\"https://example.com/?x=1&amp;y=2\" target=\"_blank\" rel=\"noopener noreferrer\">Buy &amp; save</a></div><!-- /wp:button --></div><!-- /wp:buttons -->"
+        },
+        {
+            "name": "list",
+            "blocks": [
+                {
+                    "name": "core/list",
+                    "attributes": {
+                        "ordered": true,
+                        "start": 3,
+                        "reversed": true,
+                        "anchor": "list",
+                        "style": {
+                            "color": {
+                                "text": "#102030",
+                                "background": "#eeeeee"
+                            },
+                            "spacing": {
+                                "margin": {
+                                    "top": "10px",
+                                    "bottom": "5px"
+                                },
+                                "padding": {
+                                    "top": "20px",
+                                    "right": "2rem",
+                                    "bottom": "20px",
+                                    "left": "2rem"
+                                }
+                            },
+                            "typography": {
+                                "fontSize": "22px",
+                                "fontWeight": "700",
+                                "letterSpacing": "1px",
+                                "lineHeight": "1.5"
+                            }
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/list-item",
+                            "attributes": {
+                                "content": "One & more",
+                                "style": {
+                                    "color": {
+                                        "text": "#102030",
+                                        "background": "#eeeeee"
+                                    },
+                                    "spacing": {
+                                        "margin": {
+                                            "top": "10px",
+                                            "bottom": "5px"
+                                        },
+                                        "padding": {
+                                            "top": "20px",
+                                            "right": "2rem",
+                                            "bottom": "20px",
+                                            "left": "2rem"
+                                        }
+                                    },
+                                    "typography": {
+                                        "fontSize": "22px",
+                                        "fontWeight": "700",
+                                        "letterSpacing": "1px",
+                                        "lineHeight": "1.5"
+                                    }
+                                }
+                            },
+                            "innerBlocks": [
+                                {
+                                    "name": "core/list",
+                                    "attributes": [],
+                                    "innerBlocks": [
+                                        {
+                                            "name": "core/list-item",
+                                            "attributes": {
+                                                "content": "Nested"
+                                            },
+                                            "innerBlocks": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:list {\"ordered\":true,\"start\":3,\"reversed\":true,\"style\":{\"color\":{\"text\":\"#102030\",\"background\":\"#eeeeee\"},\"spacing\":{\"margin\":{\"top\":\"10px\",\"bottom\":\"5px\"},\"padding\":{\"top\":\"20px\",\"right\":\"2rem\",\"bottom\":\"20px\",\"left\":\"2rem\"}},\"typography\":{\"fontSize\":\"22px\",\"fontWeight\":\"700\",\"letterSpacing\":\"1px\",\"lineHeight\":\"1.5\"}}} --><ol class=\"wp-block-list has-text-color has-background\" id=\"list\" style=\"color:#102030;background-color:#eeeeee;margin-top:10px;margin-bottom:5px;padding-top:20px;padding-right:2rem;padding-bottom:20px;padding-left:2rem;font-size:22px;font-weight:700;letter-spacing:1px;line-height:1.5\" reversed start=\"3\"><!-- wp:list-item {\"style\":{\"color\":{\"text\":\"#102030\",\"background\":\"#eeeeee\"},\"spacing\":{\"margin\":{\"top\":\"10px\",\"bottom\":\"5px\"},\"padding\":{\"top\":\"20px\",\"right\":\"2rem\",\"bottom\":\"20px\",\"left\":\"2rem\"}},\"typography\":{\"fontSize\":\"22px\",\"fontWeight\":\"700\",\"letterSpacing\":\"1px\",\"lineHeight\":\"1.5\"}}} --><li class=\"has-text-color has-background\" style=\"color:#102030;background-color:#eeeeee;margin-top:10px;margin-bottom:5px;padding-top:20px;padding-right:2rem;padding-bottom:20px;padding-left:2rem;font-size:22px;font-weight:700;letter-spacing:1px;line-height:1.5\">One &amp; more<!-- wp:list --><ul class=\"wp-block-list\"><!-- wp:list-item --><li>Nested</li><!-- /wp:list-item --></ul><!-- /wp:list --></li><!-- /wp:list-item --></ol><!-- /wp:list -->"
+        },
+        {
+            "name": "separator",
+            "blocks": [
+                {
+                    "name": "core/separator",
+                    "attributes": {
+                        "align": "wide",
+                        "anchor": "divider",
+                        "style": {
+                            "color": {
+                                "background": "#123456"
+                            },
+                            "spacing": {
+                                "margin": {
+                                    "top": "20px",
+                                    "bottom": "20px"
+                                }
+                            }
+                        }
+                    },
+                    "innerBlocks": []
+                }
+            ],
+            "markup": "<!-- wp:separator {\"align\":\"wide\",\"style\":{\"color\":{\"background\":\"#123456\"},\"spacing\":{\"margin\":{\"top\":\"20px\",\"bottom\":\"20px\"}}}} --><hr class=\"wp-block-separator alignwide has-alpha-channel-opacity has-text-color has-background\" id=\"divider\" style=\"background-color:#123456;margin-top:20px;margin-bottom:20px;color:#123456\"/><!-- /wp:separator -->"
+        },
+        {
+            "name": "spacer",
+            "blocks": [
+                {
+                    "name": "core/spacer",
+                    "attributes": {
+                        "height": "30px",
+                        "anchor": "gap",
+                        "style": {
+                            "spacing": {
+                                "margin": {
+                                    "top": "20px",
+                                    "bottom": "20px"
+                                }
+                            }
+                        }
+                    },
+                    "innerBlocks": []
+                }
+            ],
+            "markup": "<!-- wp:spacer {\"height\":\"30px\",\"style\":{\"spacing\":{\"margin\":{\"top\":\"20px\",\"bottom\":\"20px\"}}}} --><div class=\"wp-block-spacer\" id=\"gap\" style=\"margin-top:20px;margin-bottom:20px;height:30px\" aria-hidden=\"true\"></div><!-- /wp:spacer -->"
+        },
+        {
+            "name": "defaults",
+            "blocks": [
+                {
+                    "name": "core/heading",
+                    "attributes": {
+                        "content": "Heading",
+                        "level": 2
+                    },
+                    "innerBlocks": []
+                },
+                {
+                    "name": "core/paragraph",
+                    "attributes": {
+                        "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                    },
+                    "innerBlocks": []
+                },
+                {
+                    "name": "core/image",
+                    "attributes": {
+                        "id": 4
+                    },
+                    "innerBlocks": []
+                },
+                {
+                    "name": "core/cover",
+                    "attributes": {
+                        "alt": "",
+                        "dimRatio": 100,
+                        "isDark": true
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                            },
+                            "innerBlocks": []
+                        }
+                    ]
+                },
+                {
+                    "name": "core/separator",
+                    "attributes": [],
+                    "innerBlocks": []
+                },
+                {
+                    "name": "core/spacer",
+                    "attributes": {
+                        "height": "100px"
+                    },
+                    "innerBlocks": []
+                }
+            ],
+            "markup": "<!-- wp:heading --><h2 class=\"wp-block-heading\">Heading</h2><!-- /wp:heading -->\n\n<!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph -->\n\n<!-- wp:image {\"id\":4} --><figure class=\"wp-block-image\"><img src=\"http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png\" alt=\"\" class=\"wp-image-4\"/></figure><!-- /wp:image -->\n\n<!-- wp:cover --><div class=\"wp-block-cover\"><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim-100 has-background-dim\"></span><div class=\"wp-block-cover__inner-container\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div></div><!-- /wp:cover -->\n\n<!-- wp:separator --><hr class=\"wp-block-separator has-alpha-channel-opacity\"/><!-- /wp:separator -->\n\n<!-- wp:spacer --><div class=\"wp-block-spacer\" style=\"height:100px\" aria-hidden=\"true\"></div><!-- /wp:spacer -->"
+        },
+        {
+            "name": "landing-page",
+            "blocks": [
+                {
+                    "name": "core/cover",
+                    "attributes": {
+                        "id": 4,
+                        "alt": "Training workspace",
+                        "dimRatio": 80,
+                        "customOverlayColor": "#102030",
+                        "minHeight": 500,
+                        "align": "full"
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/heading",
+                            "attributes": {
+                                "content": "Grow With Better Conversations",
+                                "level": 1,
+                                "textAlign": "center",
+                                "style": {
+                                    "color": {
+                                        "text": "#ffffff"
+                                    },
+                                    "typography": {
+                                        "fontSize": "48px"
+                                    }
+                                }
+                            },
+                            "innerBlocks": []
+                        },
+                        {
+                            "name": "core/paragraph",
+                            "attributes": {
+                                "content": "Build an approach your team can use every day.",
+                                "align": "center",
+                                "style": {
+                                    "color": {
+                                        "text": "#ffffff"
+                                    }
+                                }
+                            },
+                            "innerBlocks": []
+                        },
+                        {
+                            "name": "core/buttons",
+                            "attributes": {
+                                "layout": {
+                                    "type": "flex",
+                                    "justifyContent": "center"
+                                }
+                            },
+                            "innerBlocks": [
+                                {
+                                    "name": "core/button",
+                                    "attributes": {
+                                        "text": "Explore the Class",
+                                        "url": "#class-details",
+                                        "style": {
+                                            "color": {
+                                                "text": "#ffffff",
+                                                "background": "#2860f5"
+                                            }
+                                        }
+                                    },
+                                    "innerBlocks": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "core/group",
+                    "attributes": {
+                        "tagName": "section",
+                        "layout": {
+                            "type": "constrained",
+                            "contentSize": "1000px"
+                        },
+                        "anchor": "class-details",
+                        "style": {
+                            "spacing": {
+                                "padding": {
+                                    "top": "60px",
+                                    "bottom": "60px"
+                                }
+                            }
+                        }
+                    },
+                    "innerBlocks": [
+                        {
+                            "name": "core/heading",
+                            "attributes": {
+                                "content": "Practical Skills for Your Team"
+                            },
+                            "innerBlocks": []
+                        },
+                        {
+                            "name": "core/columns",
+                            "attributes": [],
+                            "innerBlocks": [
+                                {
+                                    "name": "core/column",
+                                    "attributes": {
+                                        "width": "50%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "name": "core/heading",
+                                            "attributes": {
+                                                "content": "Reply With Confidence",
+                                                "level": 3
+                                            },
+                                            "innerBlocks": []
+                                        },
+                                        {
+                                            "name": "core/paragraph",
+                                            "attributes": {
+                                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                                            },
+                                            "innerBlocks": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "core/column",
+                                    "attributes": {
+                                        "width": "50%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "name": "core/heading",
+                                            "attributes": {
+                                                "content": "Follow Up Consistently",
+                                                "level": 3
+                                            },
+                                            "innerBlocks": []
+                                        },
+                                        {
+                                            "name": "core/paragraph",
+                                            "attributes": {
+                                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                                            },
+                                            "innerBlocks": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "core/list",
+                            "attributes": [],
+                            "innerBlocks": [
+                                {
+                                    "name": "core/list-item",
+                                    "attributes": {
+                                        "content": "Hands-on practice"
+                                    },
+                                    "innerBlocks": []
+                                },
+                                {
+                                    "name": "core/list-item",
+                                    "attributes": {
+                                        "content": "Reusable examples"
+                                    },
+                                    "innerBlocks": []
+                                }
+                            ]
+                        },
+                        {
+                            "name": "core/separator",
+                            "attributes": [],
+                            "innerBlocks": []
+                        },
+                        {
+                            "name": "core/heading",
+                            "attributes": {
+                                "content": "Get Started at RM97",
+                                "textAlign": "center"
+                            },
+                            "innerBlocks": []
+                        },
+                        {
+                            "name": "core/buttons",
+                            "attributes": {
+                                "layout": {
+                                    "type": "flex",
+                                    "justifyContent": "center"
+                                }
+                            },
+                            "innerBlocks": [
+                                {
+                                    "name": "core/button",
+                                    "attributes": {
+                                        "text": "Ask About the Class",
+                                        "url": "mailto:training@example.com"
+                                    },
+                                    "innerBlocks": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:cover {\"url\":\"http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png\",\"id\":4,\"alt\":\"Training workspace\",\"dimRatio\":80,\"customOverlayColor\":\"#102030\",\"minHeight\":500,\"align\":\"full\"} --><div class=\"wp-block-cover alignfull\" style=\"min-height:500px\"><img class=\"wp-block-cover__image-background wp-image-4\" alt=\"Training workspace\" src=\"http://127.0.0.1:45619/wp-content/uploads/2026/09/design-adapter-fixture.png\" data-object-fit=\"cover\"/><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim-80 has-background-dim\" style=\"background-color:#102030\"></span><div class=\"wp-block-cover__inner-container\"><!-- wp:heading {\"level\":1,\"textAlign\":\"center\",\"style\":{\"color\":{\"text\":\"#ffffff\"},\"typography\":{\"fontSize\":\"48px\"}}} --><h1 class=\"wp-block-heading has-text-align-center has-text-color\" style=\"color:#ffffff;font-size:48px\">Grow With Better Conversations</h1><!-- /wp:heading -->\n\n<!-- wp:paragraph {\"align\":\"center\",\"style\":{\"color\":{\"text\":\"#ffffff\"}}} --><p class=\"has-text-align-center has-text-color\" style=\"color:#ffffff\">Build an approach your team can use every day.</p><!-- /wp:paragraph -->\n\n<!-- wp:buttons {\"layout\":{\"type\":\"flex\",\"justifyContent\":\"center\"}} --><div class=\"wp-block-buttons\"><!-- wp:button {\"style\":{\"color\":{\"text\":\"#ffffff\",\"background\":\"#2860f5\"}}} --><div class=\"wp-block-button\"><a class=\"wp-block-button__link has-text-color has-background wp-element-button\" style=\"color:#ffffff;background-color:#2860f5\" href=\"#class-details\">Explore the Class</a></div><!-- /wp:button --></div><!-- /wp:buttons --></div></div><!-- /wp:cover -->\n\n<!-- wp:group {\"tagName\":\"section\",\"layout\":{\"type\":\"constrained\",\"contentSize\":\"1000px\"},\"style\":{\"spacing\":{\"padding\":{\"top\":\"60px\",\"bottom\":\"60px\"}}}} --><section class=\"wp-block-group\" id=\"class-details\" style=\"padding-top:60px;padding-bottom:60px\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Practical Skills for Your Team</h2><!-- /wp:heading -->\n\n<!-- wp:columns --><div class=\"wp-block-columns\"><!-- wp:column {\"width\":\"50%\"} --><div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:heading {\"level\":3} --><h3 class=\"wp-block-heading\">Reply With Confidence</h3><!-- /wp:heading -->\n\n<!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div><!-- /wp:column -->\n\n<!-- wp:column {\"width\":\"50%\"} --><div class=\"wp-block-column\" style=\"flex-basis:50%\"><!-- wp:heading {\"level\":3} --><h3 class=\"wp-block-heading\">Follow Up Consistently</h3><!-- /wp:heading -->\n\n<!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div><!-- /wp:column --></div><!-- /wp:columns -->\n\n<!-- wp:list --><ul class=\"wp-block-list\"><!-- wp:list-item --><li>Hands-on practice</li><!-- /wp:list-item -->\n\n<!-- wp:list-item --><li>Reusable examples</li><!-- /wp:list-item --></ul><!-- /wp:list -->\n\n<!-- wp:separator --><hr class=\"wp-block-separator has-alpha-channel-opacity\"/><!-- /wp:separator -->\n\n<!-- wp:heading {\"textAlign\":\"center\"} --><h2 class=\"wp-block-heading has-text-align-center\">Get Started at RM97</h2><!-- /wp:heading -->\n\n<!-- wp:buttons {\"layout\":{\"type\":\"flex\",\"justifyContent\":\"center\"}} --><div class=\"wp-block-buttons\"><!-- wp:button --><div class=\"wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"mailto:training@example.com\">Ask About the Class</a></div><!-- /wp:button --></div><!-- /wp:buttons --></section><!-- /wp:group -->"
+        },
+        {
+            "name": "maximum-depth",
+            "blocks": [
+                {
+                    "name": "core/group",
+                    "attributes": [],
+                    "innerBlocks": [
+                        {
+                            "name": "core/group",
+                            "attributes": [],
+                            "innerBlocks": [
+                                {
+                                    "name": "core/group",
+                                    "attributes": [],
+                                    "innerBlocks": [
+                                        {
+                                            "name": "core/group",
+                                            "attributes": [],
+                                            "innerBlocks": [
+                                                {
+                                                    "name": "core/group",
+                                                    "attributes": [],
+                                                    "innerBlocks": [
+                                                        {
+                                                            "name": "core/group",
+                                                            "attributes": [],
+                                                            "innerBlocks": [
+                                                                {
+                                                                    "name": "core/group",
+                                                                    "attributes": [],
+                                                                    "innerBlocks": [
+                                                                        {
+                                                                            "name": "core/paragraph",
+                                                                            "attributes": {
+                                                                                "content": "Plain copy & punctuation \"quoted\" and caf\u00e9."
+                                                                            },
+                                                                            "innerBlocks": []
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "markup": "<!-- wp:group --><div class=\"wp-block-group\"><!-- wp:group --><div class=\"wp-block-group\"><!-- wp:group --><div class=\"wp-block-group\"><!-- wp:group --><div class=\"wp-block-group\"><!-- wp:group --><div class=\"wp-block-group\"><!-- wp:group --><div class=\"wp-block-group\"><!-- wp:group --><div class=\"wp-block-group\"><!-- wp:paragraph --><p>Plain copy &amp; punctuation &quot;quoted&quot; and caf\u00e9.</p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group --></div><!-- /wp:group --></div><!-- /wp:group --></div><!-- /wp:group --></div><!-- /wp:group --></div><!-- /wp:group -->"
+        }
+    ]
+}

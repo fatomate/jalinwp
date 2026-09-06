@@ -1,0 +1,56 @@
+{
+  "test": "PHP-rendered admin DOM",
+  "browser_layout_test": false,
+  "passed": 12,
+  "total": 12,
+  "cases": [
+    {
+      "name": "Copy URL enhancement is initialized",
+      "pass": true
+    },
+    {
+      "name": "sensitive has visible linked help text",
+      "pass": true
+    },
+    {
+      "name": "oauth_enabled has visible linked help text",
+      "pass": true
+    },
+    {
+      "name": "Only the two intended Access Controls checkboxes are rendered",
+      "pass": true
+    },
+    {
+      "name": "Three change modes are rendered with permanent help",
+      "pass": true
+    },
+    {
+      "name": "Selecting YOLO selects only one native radio option",
+      "pass": true
+    },
+    {
+      "name": "YOLO selection is submitted as an explicit mode",
+      "pass": true
+    },
+    {
+      "name": "Repeated immediate-action submission is prevented",
+      "pass": true
+    },
+    {
+      "name": "Submitted immediate action is visibly busy and disabled",
+      "pass": true
+    },
+    {
+      "name": "Diagnostic response uses Title Case without changing protocol labels",
+      "pass": true
+    },
+    {
+      "name": "Diagnostic completion re-enables the button",
+      "pass": true
+    },
+    {
+      "name": "Non-connection pages initialize actions without the diagnostics form",
+      "pass": true
+    }
+  ]
+}

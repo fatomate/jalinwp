@@ -1,0 +1,271 @@
+{
+    "status": "passed",
+    "plugin_version": "0.3.2",
+    "wordpress_version": "6.8.8",
+    "source": "Real FG_Admin::page() in disposable WordPress/PHP-WASM with WooCommerce loaded",
+    "limits": [
+        "Static browser fixture with inert forms",
+        "No real OAuth client or live site access",
+        "No orders, grants or activity records seeded",
+        "Responsive/browser checks are separate"
+    ],
+    "pages": [
+        {
+            "name": "connect",
+            "file": "brand-preview/connect.html",
+            "bytes": 17889,
+            "sha256": "3d794f3b7a94c12fce3404fd5751bfa448cefc777f899b92f71773abf5624c93"
+        },
+        {
+            "name": "finance",
+            "file": "brand-preview/finance.html",
+            "bytes": 31503,
+            "sha256": "652b4ed98c97dff370c9b27ce1142eeda48d2444595384ec3c870c93b3f569c2"
+        },
+        {
+            "name": "changes",
+            "file": "brand-preview/changes.html",
+            "bytes": 2995,
+            "sha256": "efd9af15265a02842e4111c6cd760a2db234c8527b55c76cd0b0bdb31afcd37c"
+        },
+        {
+            "name": "audit",
+            "file": "brand-preview/audit.html",
+            "bytes": 3124,
+            "sha256": "aac208249bc2391c488644c0e2f84954a475dd3566c019863b3f5a910f2d6a0a"
+        },
+        {
+            "name": "connect-disabled",
+            "file": "brand-preview/connect-disabled.html",
+            "bytes": 17711,
+            "sha256": "834cc80f646cd06c68a43c8abd775b7885bf5a0fb905c55510d4c157985f1314"
+        }
+    ],
+    "assets": [
+        "assets/brand.css",
+        "assets/admin.css",
+        "assets/finance.css",
+        "assets/admin.js",
+        "assets/finance.js",
+        "assets/brand/favicon-32.png",
+        "assets/brand/favicon.ico",
+        "assets/brand/jalinwp-icon-256.png",
+        "assets/brand/jalinwp-logo-horizontal-white.png",
+        "assets/wordpress/common.css",
+        "assets/wordpress/forms.css",
+        "assets/wordpress/list-tables.css",
+        "assets/wordpress/buttons.css"
+    ],
+    "passed": 52,
+    "total": 52,
+    "cases": [
+        {
+            "name": "Copy plugin asset brand.css",
+            "pass": true
+        },
+        {
+            "name": "Copy plugin asset admin.css",
+            "pass": true
+        },
+        {
+            "name": "Copy plugin asset finance.css",
+            "pass": true
+        },
+        {
+            "name": "Copy plugin asset admin.js",
+            "pass": true
+        },
+        {
+            "name": "Copy plugin asset finance.js",
+            "pass": true
+        },
+        {
+            "name": "Copy brand asset favicon-32.png",
+            "pass": true
+        },
+        {
+            "name": "Copy brand asset favicon.ico",
+            "pass": true
+        },
+        {
+            "name": "Copy brand asset jalinwp-icon-256.png",
+            "pass": true
+        },
+        {
+            "name": "Copy brand asset jalinwp-logo-horizontal-white.png",
+            "pass": true
+        },
+        {
+            "name": "Copy WordPress asset common.css",
+            "pass": true
+        },
+        {
+            "name": "Copy WordPress asset forms.css",
+            "pass": true
+        },
+        {
+            "name": "Copy WordPress asset list-tables.css",
+            "pass": true
+        },
+        {
+            "name": "Copy WordPress asset buttons.css",
+            "pass": true
+        },
+        {
+            "name": "connect: full real page includes branded logo",
+            "pass": true
+        },
+        {
+            "name": "connect: all four real tabs render",
+            "pass": true
+        },
+        {
+            "name": "connect: active tab announced",
+            "pass": true
+        },
+        {
+            "name": "connect: old display name absent",
+            "pass": true
+        },
+        {
+            "name": "Connection: disable button present",
+            "pass": true
+        },
+        {
+            "name": "connect: export has no remote asset URLs",
+            "pass": true
+        },
+        {
+            "name": "connect: exported forms inert",
+            "pass": true
+        },
+        {
+            "name": "connect: export written",
+            "pass": true
+        },
+        {
+            "name": "finance: full real page includes branded logo",
+            "pass": true
+        },
+        {
+            "name": "finance: all four real tabs render",
+            "pass": true
+        },
+        {
+            "name": "finance: active tab announced",
+            "pass": true
+        },
+        {
+            "name": "finance: old display name absent",
+            "pass": true
+        },
+        {
+            "name": "Finance: real WooCommerce gateways and mapping forms render",
+            "pass": true
+        },
+        {
+            "name": "finance: export has no remote asset URLs",
+            "pass": true
+        },
+        {
+            "name": "finance: exported forms inert",
+            "pass": true
+        },
+        {
+            "name": "finance: export written",
+            "pass": true
+        },
+        {
+            "name": "changes: full real page includes branded logo",
+            "pass": true
+        },
+        {
+            "name": "changes: all four real tabs render",
+            "pass": true
+        },
+        {
+            "name": "changes: active tab announced",
+            "pass": true
+        },
+        {
+            "name": "changes: old display name absent",
+            "pass": true
+        },
+        {
+            "name": "changes: export has no remote asset URLs",
+            "pass": true
+        },
+        {
+            "name": "changes: exported forms inert",
+            "pass": true
+        },
+        {
+            "name": "changes: export written",
+            "pass": true
+        },
+        {
+            "name": "audit: full real page includes branded logo",
+            "pass": true
+        },
+        {
+            "name": "audit: all four real tabs render",
+            "pass": true
+        },
+        {
+            "name": "audit: active tab announced",
+            "pass": true
+        },
+        {
+            "name": "audit: old display name absent",
+            "pass": true
+        },
+        {
+            "name": "Activity: Client column present",
+            "pass": true
+        },
+        {
+            "name": "audit: export has no remote asset URLs",
+            "pass": true
+        },
+        {
+            "name": "audit: exported forms inert",
+            "pass": true
+        },
+        {
+            "name": "audit: export written",
+            "pass": true
+        },
+        {
+            "name": "connect-disabled: full real page includes branded logo",
+            "pass": true
+        },
+        {
+            "name": "connect-disabled: all four real tabs render",
+            "pass": true
+        },
+        {
+            "name": "connect-disabled: active tab announced",
+            "pass": true
+        },
+        {
+            "name": "connect-disabled: old display name absent",
+            "pass": true
+        },
+        {
+            "name": "Connection: Title Case enable button present",
+            "pass": true
+        },
+        {
+            "name": "connect-disabled: export has no remote asset URLs",
+            "pass": true
+        },
+        {
+            "name": "connect-disabled: exported forms inert",
+            "pass": true
+        },
+        {
+            "name": "connect-disabled: export written",
+            "pass": true
+        }
+    ]
+}

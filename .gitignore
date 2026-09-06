@@ -1,0 +1,40 @@
+# Generated archives and build output
+/dist/
+/release-*/
+*.zip
+/SOURCE-MANIFEST.json
+
+# Downloaded dependencies and local tools
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Disposable WordPress runtimes and generated test output
+/test-runtime/fixtures/
+/test-runtime/runs/
+/test-runtime/oauth-http-disposable-*/
+/test-runtime/admin-033-fixtures/
+/test-runtime/ui-preview/
+/test-runtime/design-browser-preview/
+/test-runtime/*-output.json
+/test-runtime/*-result.json
+
+# Local secrets and site configuration
+.env
+.env.*
+!.env.example
+wp-config.php
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+
+# Editor and OS metadata
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Keep curated test evidence, lockfiles, and brand-preview under version control.
+# Do not ignore all JSON/log files or the entire test-runtime directory.

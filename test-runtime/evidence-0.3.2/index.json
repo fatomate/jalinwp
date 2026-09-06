@@ -1,0 +1,58 @@
+{
+  "release": "0.3.2",
+  "date": "2026-09-06",
+  "checks": [
+    {
+      "name": "OAuth Security",
+      "passed": 41,
+      "total": 41,
+      "file": "oauth-tests-output.json",
+      "sha256": "dd97e712223305ecadf989d1cf4b00caee3912885a84ea1e2ba7db27698e802a"
+    },
+    {
+      "name": "Connection And Access Regression",
+      "passed": 49,
+      "total": 49,
+      "file": "setup-030-tests-output.json",
+      "sha256": "3daaf2db3835e4eded2aa37334428a3b84a99aaa6a2d773b9449bc3c847cebb9"
+    },
+    {
+      "name": "YOLO Settings Regression",
+      "passed": 37,
+      "total": 37,
+      "file": "setup-yolo-tests-output.json",
+      "sha256": "30b10216cacdeed8a85c746c2e4fd15375f9cfb9d1ea590e3031862463e18f4c"
+    },
+    {
+      "name": "HTTP OAuth And YOLO Lifecycle",
+      "passed": 33,
+      "total": 33,
+      "file": "oauth-http-normal-chatgpt-yolo-output.json",
+      "sha256": "02cc48f8d89a623bae303818839a210f400d1892c97d2a974fc67a3fd96ebfcd"
+    },
+    {
+      "name": "PHP-Rendered Brand Screens",
+      "passed": 52,
+      "total": 52,
+      "file": "brand-verification.json",
+      "sha256": "b07f9bce21ad513dbe2ce60de0a5f738e43ecf04105eca959f6104236e5bda15"
+    },
+    {
+      "name": "Changed Production PHP Syntax",
+      "passed": 10,
+      "total": 10,
+      "file": "php-lint-0.3.2.json",
+      "sha256": "cc5271f7e15c3a1bca8b20eaee269e1b116c4cdbf0d70743608a2f51e278faae"
+    }
+  ],
+  "bridge": {
+    "passed": 16,
+    "total": 16,
+    "file": "bridge-brand-run.log"
+  },
+  "not_run": [
+    "Visual browser desktop/mobile inspection: local preview URLs blocked by browser environment",
+    "Live staging update and actual ChatGPT/Claude client reconnection",
+    "Native MySQL/MariaDB and full WordPress/PHP/theme version matrix"
+  ]
+}
