@@ -57,7 +57,7 @@ def main():
     print(json.dumps({
         "status": "passed", "version": release, "source_files": len(members),
         "relative_markdown_links": local_links,
-        "checks": ["Required root metadata", "Legacy plugin layout", "Version agreement",
+        "checks": ["Required root metadata", "Plugin layout", "Version agreement",
                    "Matching license copies", "Required brand assets", "Curated source members",
                    "Relative Markdown file targets"],
         "scope": "No network links, anchors, WordPress execution, or Git ignore semantics tested",

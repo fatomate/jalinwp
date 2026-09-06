@@ -21,6 +21,6 @@ Root README, the existing GPL license, AGENTS.md, contributor/security guidance,
 
 GitHub Actions has not run and no GitHub repository was created or published by this task. No live site, OAuth provider account, or host configuration was changed.
 
-The plugin integration evidence remains the prior 0.3.3 evidence because plugin runtime files were not modified. Those suites were not rerun merely to assemble this kit. Native MySQL/MariaDB, actual hosted-client reconnection, and desktop/mobile browser acceptance remain subject to the limits recorded in [plugin validation](../fames-mcp-gateway/docs/VALIDATION.md).
+The plugin integration evidence remains the prior 0.3.3 evidence because plugin runtime files were not modified. Those suites were not rerun merely to assemble this kit. Native MySQL/MariaDB, actual hosted-client reconnection, and desktop/mobile browser acceptance remain subject to the limits recorded in [plugin validation](../docs/VALIDATION.md).
 
 Packaging requires Python 3.9+ and no third-party Python modules. The supplied CI workflow uses the official [checkout](https://github.com/actions/checkout), [setup-python](https://github.com/actions/setup-python), and [setup-node](https://github.com/actions/setup-node) actions. Their published usage was checked when assembling the workflow; its hosted execution must be confirmed after the repository is pushed.

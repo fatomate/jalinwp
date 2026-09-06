@@ -6,19 +6,24 @@
 
 # Downloaded dependencies and local tools
 node_modules/
+/.pi/
 .venv/
 __pycache__/
 *.pyc
 
 # Disposable WordPress runtimes and generated test output
-/test-runtime/fixtures/
-/test-runtime/runs/
-/test-runtime/oauth-http-disposable-*/
-/test-runtime/admin-033-fixtures/
-/test-runtime/ui-preview/
-/test-runtime/design-browser-preview/
-/test-runtime/*-output.json
-/test-runtime/*-result.json
+/scripts/test-runtime/fixtures/
+/scripts/test-runtime/runs/
+/scripts/test-runtime/oauth-http-disposable-*/
+/scripts/test-runtime/admin-033-fixtures/
+/scripts/test-runtime/ui-preview/
+/scripts/test-runtime/design-browser-preview/
+/scripts/test-runtime/brand-preview/
+/scripts/test-runtime/*-output.json
+/scripts/test-runtime/*-render.html
+/scripts/test-runtime/brand-verification.json
+/scripts/test-runtime/wp-tools.json
+/scripts/test-runtime/*-result.json
 
 # Local secrets and site configuration
 .env
@@ -36,5 +41,5 @@ Thumbs.db
 *.swp
 *.swo
 
-# Keep curated test evidence, lockfiles, and brand-preview under version control.
+# Keep curated docs/evidence, lockfiles, and source fixtures under version control.
 # Do not ignore all JSON/log files or the entire test-runtime directory.

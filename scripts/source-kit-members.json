@@ -1,0 +1,19 @@
+[
+  "package.json",
+  "package-lock.json",
+  "tsconfig.json",
+  "scripts/typecheck/runtime-globals.d.ts",
+  "docs/DEVELOPER-TESTS.md",
+  "docs/RUNTIME.md",
+  "docs/NATIVE-030.md",
+  "docs/evidence/README.md",
+  "scripts/bridge/stdio.mjs",
+  "scripts/bridge/test.mjs",
+  "scripts/test-runtime/package.json",
+  "scripts/test-runtime/package-lock.json",
+  "scripts/test-runtime/baseline-blueprint.json",
+  "scripts/test-runtime/woo-fixture-blueprint.json",
+  "scripts/test-runtime/cases/design-blocks.php",
+  "scripts/test-runtime/design-js-runtime/package.json",
+  "scripts/test-runtime/design-js-runtime/package-lock.json"
+]

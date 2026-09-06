@@ -1,0 +1,8 @@
+/* Only pages explicitly using JalinWP Canvas are affected. Theme/plugin hooks remain active. */
+body.jalin-mcp-canvas-page { margin: 0; padding: 0; }
+.jalin-mcp-canvas-page .jalin-mcp-canvas-main { box-sizing: border-box; width: 100%; max-width: none; margin: 0; padding: 0; }
+.jalin-mcp-canvas-page .jalin-mcp-canvas-main > .wp-block-post-content { margin: 0; max-width: none; }
+.jalin-mcp-canvas-page .jalin-mcp-canvas-main .alignfull { margin-left: 0; margin-right: 0; width: 100%; max-width: none; }
+.jalin-mcp-canvas-page .jalin-mcp-canvas-main img { max-width: 100%; height: auto; }
+.jalin-mcp-canvas-page .jalin-mcp-canvas-main .wp-block-cover__image-background { height: 100%; }
+.jalin-mcp-canvas-page .screen-reader-text:focus { position: fixed; z-index: 100000; top: 1rem; left: 1rem; padding: 1rem; color: #111; background: #fff; }

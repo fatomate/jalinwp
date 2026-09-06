@@ -1,9 +1,14 @@
 # Changelog
 
-The current plugin release is **0.3.3**. This repository starter adds documentation, agent guidance, repository metadata, contributor templates, and portable build tooling; it does not change the plugin runtime.
+**0.3.3** is the initial private GitHub release of this repository. Earlier entries describe internal development, not a supported public upgrade path. Publication identity is the release tag when it exists.
 
 ## 0.3.3
 
+- Establish `jalin-mcp-gateway/jalin-mcp-gateway.php` and `jalin-mcp/v1` as the clean public identity.
+- Relocate supporting documentation to `docs/` and development scripts/tests to `scripts/`.
+- Restrict discovery publication to protected setup/check actions; settings-page GET is read-only.
+- Repair fresh-install fixtures and replace the obsolete admin-connection suite failure with current 0.3.3 coverage.
+- Add strict JavaScript typechecking; record disposable integration and native MariaDB schema checks in validation notes.
 - Compact JalinWP header with a solid cobalt border and version-only display.
 - Dedicated Connection Setup, OAuth Connections, and Access Controls tabs.
 - Compact summary of finance fields already supplied by WooCommerce.
@@ -25,4 +30,4 @@ The current plugin release is **0.3.3**. This repository starter adds documentat
 - One-click MCP enable/disable, simplified account access, and client-attributed activity.
 - Guided finance setup, OAuth lifecycle listing, page templates/Canvas, and supported Gutenberg block adapters.
 
-See the plugin's [complete changelog](fames-mcp-gateway/readme.txt) and [current validation record](fames-mcp-gateway/docs/VALIDATION.md).
+See the plugin's [complete changelog](jalin-mcp-gateway/readme.txt) and [current validation record](docs/VALIDATION.md).

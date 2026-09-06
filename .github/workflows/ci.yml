@@ -27,15 +27,22 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
+      - name: Install Root Development Tools
+        run: npm ci
+      - name: Install Runtime Development Dependencies
+        working-directory: scripts/test-runtime
+        run: npm ci
+      - name: Strict JavaScript Typecheck
+        run: npm run typecheck
       - name: Verify Repository
         run: python3 scripts/check-repository.py
       - name: Test Packaging
         run: python3 scripts/test-package.py
       - name: Test Local Bridge
-        run: node --test fames-mcp-gateway/bridge/test.mjs
+        run: node --test scripts/bridge/test.mjs
       - name: Build Install And Source ZIPs
         run: python3 scripts/package.py
 
 # This starter workflow does not publish releases or use site credentials.
 # Full disposable WordPress/WooCommerce, native database, and visual/client
-# checks remain documented in test-runtime/DEVELOPER-TESTS.md.
+# checks remain documented in docs/DEVELOPER-TESTS.md.

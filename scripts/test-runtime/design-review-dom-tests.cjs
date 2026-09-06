@@ -1,0 +1,43 @@
+// DOM unit check of the review script with real WordPress editor packages. No browser or HTTP.
+const fs = require('node:fs');
+const f = require('./design-editor-fixture.cjs');
+/** @typedef {{ name: string, markup: string }} Fixture */
+/** @typedef {{ fixtures: Fixture[] }} FixtureData */
+/** @typedef {{ name: string, pass: boolean }} Case */
+/** @type {FixtureData} */
+const data = JSON.parse(fs.readFileSync(__dirname + '/design-blocks-fixtures.json', 'utf8'));
+/** @type {Case[]} */
+const cases = [];
+/** @param {string} name @param {string} markup */
+function card(name, markup) {
+    const node = f.window.document.createElement('article');
+    node.dataset.fgChangeCard = '';
+    node.innerHTML = '<div data-fg-design-review data-content-digest="digest"><textarea data-fg-design-source hidden></textarea><p data-fg-design-status></p></div><input name="design_validation"><button data-fg-approve>Approve</button>';
+    const source = node.querySelector('textarea');
+    if (!(source instanceof f.window.HTMLTextAreaElement)) throw new Error('Expected design source');
+    source.value = markup;
+    node.dataset.caseName = name;
+    f.window.document.body.appendChild(node);
+    return node;
+}
+const valid = data.fixtures.map(fixture => card(fixture.name, fixture.markup));
+const invalid = card('Invalid Markup', '<!-- wp:heading --><h1>Wrong</h1><!-- /wp:heading -->');
+f.window.console.error = () => {};
+f.window.console.warn = () => {};
+f.window.eval(fs.readFileSync(__dirname + '/../../jalin-mcp-gateway/assets/design-validation.js', 'utf8'));
+f.window.eval(fs.readFileSync(__dirname + '/../../jalin-mcp-gateway/assets/design-review.js', 'utf8'));
+f.window.document.dispatchEvent(new f.window.Event('DOMContentLoaded'));
+for (const node of valid) {
+    const button = node.querySelector('button');
+    const input = node.querySelector('input');
+    const status = node.querySelector('p');
+    cases.push({name:(node.dataset.caseName || '') + ' approval enabled only with matching digest',pass:button instanceof f.window.HTMLButtonElement && input instanceof f.window.HTMLInputElement && status instanceof f.window.HTMLParagraphElement && !button.disabled && input.value === 'digest' && status.textContent.startsWith('Gutenberg Validation Passed')});
+}
+const invalidButton = invalid.querySelector('button');
+const invalidInput = invalid.querySelector('input');
+const invalidStatus = invalid.querySelector('p');
+cases.push({name:'Invalid markup keeps approval blocked and digest empty',pass:invalidButton instanceof f.window.HTMLButtonElement && invalidInput instanceof f.window.HTMLInputElement && invalidStatus instanceof f.window.HTMLParagraphElement && invalidButton.disabled && invalidInput.value === '' && invalidStatus.textContent.startsWith('Gutenberg Validation Failed')});
+const output = {passed:cases.filter(test=>test.pass).length,total:cases.length,engine:'jsdom with WordPress 6.8.8 packages; not a browser',cases};
+fs.writeFileSync(__dirname + '/design-review-dom-output.json', JSON.stringify(output,null,2));
+console.log(JSON.stringify({passed:output.passed,total:output.total}));
+f.close(); Reflect.set(process, 'exitCode', output.passed === output.total ? 0 : 1);

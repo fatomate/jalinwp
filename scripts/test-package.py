@@ -38,10 +38,12 @@ class PackageTests(unittest.TestCase):
 
     def test_01_archive_members_and_exclusions(self):
         artifacts = [
-            ".git/config", ".env", ".env.production", "credentials/private.key",
-            "test-runtime/node_modules/dependency/index.js", "test-runtime/fixtures/site/wp-config.php",
-            "test-runtime/runs/a/db.sqlite", "test-runtime/oauth-http-disposable-a/secret.json",
-            "test-runtime/new-tests-output.json", "test-runtime/debug.log", "SOURCE-MANIFEST.json",
+            ".git/config", ".pi/session.json", ".env", ".env.production", "credentials/private.key",
+            "scripts/test-runtime/node_modules/dependency/index.js", "scripts/test-runtime/fixtures/site/wp-config.php", "scripts/test-runtime/brand-preview/generated.html",
+            "scripts/test-runtime/runs/a/db.sqlite", "scripts/test-runtime/oauth-http-disposable-a/secret.json",
+            "scripts/test-runtime/new-tests-output.json", "scripts/test-runtime/debug.log", "SOURCE-MANIFEST.json",
+            "scripts/test-runtime/connection-trace-render.html", "scripts/test-runtime/finance-admin-hpos-render.html",
+            "scripts/test-runtime/brand-verification.json", "scripts/test-runtime/wp-tools.json",
             "dist/previous.zip", "custom-output/unexpected.json",
             f"{package.PLUGIN_NAME}/.env", f"{package.PLUGIN_NAME}/wp-config.php",
             f"{package.PLUGIN_NAME}/private.pem", f"{package.PLUGIN_NAME}/backup.sql",
@@ -62,7 +64,7 @@ class PackageTests(unittest.TestCase):
                     self.assertNotIn(name, install.namelist())
             for name in package.REQUIRED_ROOT:
                 self.assertIn("jalinwp/" + name, source.namelist())
-            historical_log = "test-runtime/evidence-0.3.2/bridge-brand-run.log"
+            historical_log = "docs/evidence/evidence-0.3.2/bridge-brand-run.log"
             self.assertEqual((self.root / historical_log).read_bytes(), source.read("jalinwp/" + historical_log))
             for name in package.REQUIRED_PLUGIN:
                 self.assertIn(package.PLUGIN_NAME + "/" + name, install.namelist())
@@ -72,7 +74,7 @@ class PackageTests(unittest.TestCase):
             for name, original_bytes in expected.items():
                 self.assertEqual(original_bytes, install.read(name), name)
                 self.assertEqual(original_bytes, source.read("jalinwp/" + name), name)
-            self.assertNotIn(package.PLUGIN_NAME + "/bridge/test.mjs", install.namelist())
+            self.assertNotIn("jalinwp/scripts/bridge/test.mjs", install.namelist())
             self.assertFalse(any("/tests/" in name for name in install.namelist()))
             manifest = json.loads(source.read("jalinwp/SOURCE-MANIFEST.json"))
             self.assertEqual(self.release, manifest["version"])
@@ -97,7 +99,7 @@ class PackageTests(unittest.TestCase):
             file.write_text(original, encoding="utf-8")
 
     def test_04_unsafe_manifest_path_fails(self):
-        file = self.root / "source-kit-members.json"
+        file = self.root / "scripts" / "source-kit-members.json"
         original = file.read_text(encoding="utf-8")
         try:
             members = json.loads(original)
@@ -108,7 +110,14 @@ class PackageTests(unittest.TestCase):
         finally:
             file.write_text(original, encoding="utf-8")
 
-    def test_05_symlink_source_fails(self):
+    def test_05_required_source_member_omission_fails(self):
+        required = json.loads((self.root / "scripts/source-kit-members.json").read_text(encoding="utf-8"))[0]
+        (self.root / required).unlink()
+        with self.assertRaisesRegex(ValueError, "Missing source member"):
+            package.source_files(self.root)
+        shutil.copyfile(package.ROOT / required, self.root / required)
+
+    def test_06_symlink_source_fails(self):
         link = self.root / package.PLUGIN_NAME / "assets" / "unexpected.js"
         try:
             link.symlink_to(self.root / "README.md")
@@ -120,10 +129,18 @@ class PackageTests(unittest.TestCase):
         finally:
             link.unlink()
 
-    def test_06_source_output_directory_fails(self):
-        for directory in [self.root, self.root.parent, self.root / package.PLUGIN_NAME / "build", self.root / "test-runtime" / "build"]:
+    def test_07_source_output_directory_fails(self):
+        for directory in [self.root, self.root.parent, self.root / package.PLUGIN_NAME / "build", self.root / "scripts" / "test-runtime" / "build"]:
             with self.assertRaises(ValueError):
                 package.build(self.root, directory)
+
+    def test_08_source_archive_rebuilds_the_install_archive(self):
+        report = package.build(self.root, self.root / "source-build")
+        extract = self.root / "extracted"
+        with zipfile.ZipFile(self.root / "source-build" / report["source"]) as archive:
+            archive.extractall(extract)
+        rebuilt = package.build(extract / "jalinwp", extract / "dist")
+        self.assertEqual(report["install_sha256"], rebuilt["install_sha256"])
 
 
 if __name__ == "__main__":

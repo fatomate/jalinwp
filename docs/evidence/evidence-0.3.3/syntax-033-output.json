@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "passed": 5,
+  "total": 5,
+  "cases": [
+    {
+      "path": "jalin-mcp-gateway/jalin-mcp-gateway.php",
+      "pass": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-0.3.3-work/jalinwp-source/jalin-mcp-gateway/jalin-mcp-gateway.php\n"
+    },
+    {
+      "path": "jalin-mcp-gateway/assets/admin.js",
+      "pass": true,
+      "output": ""
+    },
+    {
+      "path": "jalin-mcp-gateway/includes/class-oauth.php",
+      "pass": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-0.3.3-work/jalinwp-source/jalin-mcp-gateway/includes/class-oauth.php\n"
+    },
+    {
+      "path": "jalin-mcp-gateway/includes/class-admin.php",
+      "pass": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-0.3.3-work/jalinwp-source/jalin-mcp-gateway/includes/class-admin.php\n"
+    },
+    {
+      "path": "jalin-mcp-gateway/includes/class-finance-admin.php",
+      "pass": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-0.3.3-work/jalinwp-source/jalin-mcp-gateway/includes/class-finance-admin.php\n"
+    }
+  ],
+  "changed_production_files": [
+    "jalin-mcp-gateway/README.md",
+    "jalin-mcp-gateway/readme.txt",
+    "jalin-mcp-gateway/jalin-mcp-gateway.php",
+    "jalin-mcp-gateway/assets/finance.css",
+    "jalin-mcp-gateway/assets/admin.js",
+    "jalin-mcp-gateway/assets/admin.css",
+    "jalin-mcp-gateway/includes/class-oauth.php",
+    "jalin-mcp-gateway/includes/class-admin.php",
+    "jalin-mcp-gateway/includes/class-finance-admin.php",
+    "jalin-mcp-gateway/docs/OAUTH-DEVELOPMENT.md",
+    "jalin-mcp-gateway/docs/CONNECTING-CHATGPT.md",
+    "jalin-mcp-gateway/docs/VALIDATION-0.3.2.md",
+    "jalin-mcp-gateway/docs/YOLO-MODE.md",
+    "jalin-mcp-gateway/docs/UPGRADE-0.3.3.md"
+  ]
+}

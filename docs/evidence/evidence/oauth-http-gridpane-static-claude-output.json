@@ -1,0 +1,153 @@
+{
+  "status": "passed",
+  "mode": "gridpane-static",
+  "clientType": "claude",
+  "writeMode": "read_only",
+  "passed": 29,
+  "total": 29,
+  "cases": [
+    {
+      "name": "Disposable HTTP server starts with plugin enabled",
+      "pass": true
+    },
+    {
+      "name": "Host intercepts root discovery with 404 before WordPress",
+      "pass": true
+    },
+    {
+      "name": "Official SDK proactively discovers the issuer from only the MCP URL before any 401 challenge",
+      "pass": true
+    },
+    {
+      "name": "Proactive discovery uses the path-specific protected resource and RFC8414 issuer documents",
+      "pass": true
+    },
+    {
+      "name": "Official SDK parses extensionless static resource JSON served with the default Nginx MIME type",
+      "pass": true
+    },
+    {
+      "name": "MCP HTTP 401 advertises Bearer resource metadata",
+      "pass": true
+    },
+    {
+      "name": "Protected resource discovery matches MCP audience and stable REST issuer",
+      "pass": true
+    },
+    {
+      "name": "Official MCP SDK discovers exact issuer and mandatory S256 metadata",
+      "pass": true
+    },
+    {
+      "name": "Official SDK discovers static RFC8414 metadata on a GridPane-like host",
+      "pass": true
+    },
+    {
+      "name": "Published metadata is served as JSON without reaching WordPress",
+      "pass": true
+    },
+    {
+      "name": "GridPane-like host also intercepts nested well-known URLs before PHP",
+      "pass": true
+    },
+    {
+      "name": "REST metadata responses remain uncached",
+      "pass": true
+    },
+    {
+      "name": "HTTP dynamic client registration succeeds without manually provisioned credentials",
+      "pass": true
+    },
+    {
+      "name": "Authorization sends an anonymous user to native WordPress login",
+      "pass": true
+    },
+    {
+      "name": "Native WordPress login succeeds using the synthetic account",
+      "pass": true
+    },
+    {
+      "name": "Authenticated authorization renders an explicit consent form",
+      "pass": true
+    },
+    {
+      "name": "Consent page CSP permits only this registered client origin and same-site forms",
+      "pass": true
+    },
+    {
+      "name": "Consent contains a named approval control",
+      "pass": true
+    },
+    {
+      "name": "Consent returns a code, state and exact issuer to the registered claude callback",
+      "pass": true
+    },
+    {
+      "name": "Consent POST redirect preserves the same restrictive client-specific CSP",
+      "pass": true
+    },
+    {
+      "name": "HTTP authorization code exchange returns access and refresh tokens",
+      "pass": true
+    },
+    {
+      "name": "Bearer token initializes MCP through a real HTTP request",
+      "pass": true
+    },
+    {
+      "name": "MCP catalog respects a read-only consent grant",
+      "pass": true
+    },
+    {
+      "name": "OAuth grant executes a WordPress read tool over HTTP",
+      "pass": true
+    },
+    {
+      "name": "Gateway bearer does not authenticate ordinary WordPress REST routes",
+      "pass": true
+    },
+    {
+      "name": "HTTP refresh rotates the refresh token",
+      "pass": true
+    },
+    {
+      "name": "Refreshed access token remains usable",
+      "pass": true
+    },
+    {
+      "name": "Reused refresh token is rejected",
+      "pass": true
+    },
+    {
+      "name": "Refresh replay revokes the associated active access grant",
+      "pass": true
+    }
+  ],
+  "proactiveDiscoveryAttempts": [
+    {
+      "path": "/.well-known/oauth-protected-resource/wp-json/jalin-mcp/v1/mcp",
+      "status": 200,
+      "contentType": "application/octet-stream"
+    },
+    {
+      "path": "/.well-known/oauth-authorization-server/wp-json/jalin-mcp/v1/oauth/issuer.json",
+      "status": 200,
+      "contentType": "application/json"
+    }
+  ],
+  "discoveryAttempts": [
+    {
+      "path": "/.well-known/oauth-authorization-server/wp-json/jalin-mcp/v1/oauth/issuer.json",
+      "status": 200
+    }
+  ],
+  "discoveryClient": "@modelcontextprotocol/sdk 1.30.0",
+  "blockedRequests": 2,
+  "staticRequests": 4,
+  "stack": "WordPress 6.8.8 / PHP 8.3 / SQLite / local HTTP reverse proxy with fixture-only HTTPS recognition",
+  "limits": [
+    "Not a live GridPane host, native MySQL, real TLS, browser automation or actual ChatGPT/Claude connection.",
+    "Official MCP SDK exercises discovery only. The remaining OAuth flow uses a local synthetic HTTP client with the documented hosted callback. No authorization code is sent to the real callback.",
+    "GridPane-static mode models an unanchored well-known path interception serving two owned metadata files, including extensionless JSON as application/octet-stream; host-specific WAF/CDN policies are not simulated."
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "syntax_only": true,
+  "release": "0.3.1",
+  "checked_at": "2026-09-05T23:06:08.055785+00:00",
+  "runtime": {
+    "node": "v24.19.0",
+    "php_wasm": "PHP 8.5.8 (cli) (built: Jul  8 2026 07:45:04) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.5.8, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.8, Copyright (c), by Zend Technologies"
+  },
+  "passed": 14,
+  "total": 14,
+  "cases": [
+    {
+      "name": "jalin-mcp-gateway/assets/admin.js",
+      "sha256": "b39dc454d282efcee9bf1b1a6eeee6c86b9c5349f6bfd0e4c9ab12ca2b4142aa",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "jalin-mcp-gateway/assets/design-review.js",
+      "sha256": "e53a5bdf993d2fd733d3c4c930d55c9e384b48842cf034dc6e410e6a80a983aa",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "jalin-mcp-gateway/assets/design-validation.js",
+      "sha256": "6cfba3d5621f080361c68b7d8aeb722ca7cf44f5c0fbbd6d408bbfcbac8632f0",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "jalin-mcp-gateway/assets/finance.js",
+      "sha256": "f0fdb4c3c4dd69814292c85b0db57cf530ebfb91eaca62f996d313c8476d82b6",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "jalin-mcp-gateway/bridge/stdio.mjs",
+      "sha256": "f6fed4c787ba36a7f7bd895e291da91db33d9cf401b563334530a9a150380f07",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "jalin-mcp-gateway/bridge/test.mjs",
+      "sha256": "1cc9f68ab6c26076b3011cf585892089b974ee2bc40eac1ea46902177a651625",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "jalin-mcp-gateway/tests/admin-ui-030.mjs",
+      "sha256": "74cad898dfc2f09a00f1f872bb409b5bc96024e291126fea7db3277e45539ebd",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "test-runtime/design-blocks-canonical-tests.cjs",
+      "sha256": "2c12d909afa15df66b199dbaf3bfce34db106cd2a2bcc5bb730d9e52d2dbdc78",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "test-runtime/design-editor-fixture.cjs",
+      "sha256": "99a94d4b0ab6ca5e5b56c5bab98aeed7437bbde209cdf0ccd9ec186971e29d6d",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "test-runtime/design-review-dom-tests.cjs",
+      "sha256": "b2b5796f35378216d85bf768d20cdb4f110e1f9db1f39669e25e4076567d6ce0",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "test-runtime/design-save-probe.cjs",
+      "sha256": "d7b1839e8151a810082b28eaf0d1e740f07cdd9a948b133e94c7e930615f75f8",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "test-runtime/oauth-http-smoke.mjs",
+      "sha256": "12e22753a6932a7e44831e0d0dbc1208444d4ea1664b38dd6f71547ae801122d",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "test-runtime/run-wp-tests.mjs",
+      "sha256": "2fbbcd09c377cb77b182a09552dd543eabc614a8379d17dc6f27b66097ec2539",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    },
+    {
+      "name": "test-runtime/setup-fixture.mjs",
+      "sha256": "d24b333922ab28f5cb065f1d97416d6bbf9a045b214ca5d1b4cf67d994f3ec6a",
+      "pass": true,
+      "exit_code": 0,
+      "source_unchanged_during_check": true,
+      "output": ""
+    }
+  ]
+}

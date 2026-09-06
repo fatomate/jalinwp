@@ -1,0 +1,22 @@
+{
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8.8"
+  },
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/plugin/woocommerce.10.2.2.zip"
+      },
+      "options": {
+        "activate": false
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\nfile_put_contents('/test-results/woo-fixture-result.json', wp_json_encode(array('exists' => file_exists(WP_PLUGIN_DIR . '/woocommerce/woocommerce.php'), 'active' => is_plugin_active('woocommerce/woocommerce.php'))));\n"
+    }
+  ]
+}

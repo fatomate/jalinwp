@@ -1,0 +1,66 @@
+{
+  "passed": 10,
+  "total": 10,
+  "cases": [
+    {
+      "file": "jalin-mcp-gateway/jalin-mcp-gateway.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/jalin-mcp-gateway.php",
+      "sha256": "e300b055042603c98d0a98ac451cc7ca1ec51b8a3012a53cb4d0b83009de74b4"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-admin.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-admin.php",
+      "sha256": "aa67e52957defae857d0b30d8b8f535db75489893de6a6f33e197bdc60cd95ea"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-approvals.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-approvals.php",
+      "sha256": "e16a50eed0bc3f2abd2ff1280719c792a2b2a5e84d9aa5a61887157d87657f91"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-auth.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-auth.php",
+      "sha256": "df2d5bebbfa29c22a2c1dd6c6ef4e943556d60452fd46d5c46dea83d19ca56d0"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-connection-trace.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-connection-trace.php",
+      "sha256": "ce8f2b28a8a004c8757282b745af4c4c10b247dd654c9182406bcf1acfe9d7a7"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-core.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-core.php",
+      "sha256": "00104b88e49bd840679169cb03eb2afe01f0bd32eada37def4d3d87f17199d0c"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-oauth.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-oauth.php",
+      "sha256": "fbbd02f0ad77c355666fa1354a87680de369ecb14ead40ac091fed8981501e79"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-page-design.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-page-design.php",
+      "sha256": "b4e7bf452e379f44328c3f10a1cce3d01459f985eab599a052cb8200337f3e7b"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-page-layouts.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-page-layouts.php",
+      "sha256": "09297aba257410c676a765b4591ef9c2012426699c75dc14515319371f557ad5"
+    },
+    {
+      "file": "jalin-mcp-gateway/includes/class-server.php",
+      "passed": true,
+      "output": "No syntax errors detected in /workspace/scratch/ee516bb02d35/jalinwp-rebrand/jalin-mcp-gateway-source/jalin-mcp-gateway/includes/class-server.php",
+      "sha256": "f7294480d0c19e255842f918a982725ce7166414ee527536455a14ff88966f14"
+    }
+  ]
+}

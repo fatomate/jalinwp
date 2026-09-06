@@ -6,11 +6,20 @@ For suspected security vulnerabilities, follow [SECURITY.md](SECURITY.md). For o
 
 ## Local Setup
 
-Keep `fames-mcp-gateway/` and `test-runtime/` beside each other. Use Node.js 22+ and npm to install the locked development dependencies:
+Keep `jalin-mcp-gateway/` and `scripts/test-runtime/` beside each other. Use Node.js 22+ and npm to install the locked development dependencies. From the repository root, verify maintained JavaScript with the pinned strict checker:
 
 ```sh
-cd test-runtime
 npm ci
+(cd scripts/test-runtime && npm ci)
+npm run typecheck
+```
+
+Both installs are required: the strict checker resolves the OAuth smoke test's SDK import from the runtime dependency tree. CI installs both trees before typechecking.
+
+Then prepare the disposable runtime:
+
+```sh
+cd scripts/test-runtime
 npm ci --prefix design-js-runtime
 node setup-fixture.mjs
 node run-wp-tests.mjs runtime-smoke.php
@@ -18,26 +27,26 @@ node run-wp-tests.mjs runtime-smoke.php
 
 Initial setup downloads the pinned WordPress/WooCommerce fixture and PHP-WASM components. It refuses to replace an existing populated WordPress fixture. The test runner copies the fixture to a disposable local site; use synthetic accounts, orders and credentials. A live WordPress site and native database service are unnecessary for these suites.
 
-Follow [Developer Tests](test-runtime/DEVELOPER-TESTS.md) for the complete environment, available suites, generated fixtures and optional native MySQL/MariaDB gate. `npm test` runs the WordPress tools suite only; it is not the full test collection.
+Follow [Developer Tests](docs/DEVELOPER-TESTS.md) for the complete environment, available suites, generated fixtures and optional native MySQL/MariaDB gate. `npm test` runs the WordPress tools suite only; it is not the full test collection.
 
 ## Make A Focused Change
 
 Create a branch for the work. Follow the existing PHP/JavaScript style and keep changes scoped to the requested behavior. Explain the problem, resulting behavior and any compatibility impact in the pull request.
 
-The following existing identities are deliberate compatibility contracts:
+The following existing identities are deliberate runtime contracts:
 
-- Plugin directory/bootstrap: `fames-mcp-gateway/fames-mcp-gateway.php`.
-- REST namespace: `fames-mcp/v1`; existing OAuth issuer and resource URLs.
-- `FG_*` classes, `fg_*` hooks/options/tables and the `fames-mcp-gateway` text domain.
+- Plugin directory/bootstrap: `jalin-mcp-gateway/jalin-mcp-gateway.php`.
+- REST namespace: `jalin-mcp/v1` and its OAuth issuer/resource URLs.
+- `FG_*` classes, `fg_*` hooks/options/tables and the `jalin-mcp-gateway` text domain.
 - Saved JalinWP Canvas template identifiers.
 
-Do not rename these as a cosmetic branding change. Changes to persisted formats or permissions need an explicit migration and tests for existing installations.
+Do not rename these as a cosmetic branding change. Changes to persisted formats or permissions need explicit validation.
 
 Fresh setups are Read Only because `writes=false`. The saved `write_mode` describes Reviewed or YOLO behavior when writes are enabled; it is not a replacement for that boolean. Preserve previously saved choices and the intersection of native capabilities, current settings and OAuth consent.
 
 ## Verify The Affected Behavior
 
-Use focused checks for the actual risk. These examples run from `test-runtime/`:
+Use focused checks for the actual risk. These examples run from `scripts/test-runtime/`:
 
 | Changed Area | Relevant Commands |
 | --- | --- |
@@ -54,8 +63,8 @@ Run the admin PHP suite before its DOM companion because it creates the form fix
 Lint modified PHP and JavaScript files. For example:
 
 ```sh
-node node_modules/@php-wasm/cli/php-wasm.js -l ../fames-mcp-gateway/includes/class-admin.php
-node --check ../fames-mcp-gateway/assets/admin.js
+node node_modules/@php-wasm/cli/php-wasm.js -l ../jalin-mcp-gateway/includes/class-admin.php
+node --check ../jalin-mcp-gateway/assets/admin.js
 ```
 
 Saved evidence is historical until a suite is executed against the changed source. State which checks ran, which failed and which were not run. PHP-WASM/SQLite results do not establish native MySQL/MariaDB compatibility; DOM assertions do not establish browser layout or a successful real client connection.

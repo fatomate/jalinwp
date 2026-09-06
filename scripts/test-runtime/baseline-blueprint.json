@@ -1,0 +1,12 @@
+{
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8.8"
+  },
+  "steps": [
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\nfile_put_contents('/test-results/baseline-result.json', wp_json_encode(array('wordpress' => get_bloginfo('version'), 'php' => PHP_VERSION, 'db' => get_class($GLOBALS['wpdb']))));\n"
+    }
+  ]
+}

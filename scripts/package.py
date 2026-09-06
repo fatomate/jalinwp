@@ -16,34 +16,25 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN_NAME = "fames-mcp-gateway"
+PLUGIN_NAME = "jalin-mcp-gateway"
 REQUIRED_ROOT = (
-    "README.md", "LICENSE", "AGENTS.md", "CONTRIBUTING.md", "SECURITY.md",
-    ".gitignore", ".gitattributes", ".editorconfig",
+    "README.md", "LICENSE", "CHANGELOG.md", "AGENTS.md", "CONTRIBUTING.md", "SECURITY.md",
+    ".gitignore", ".gitattributes", ".editorconfig", "package.json", "package-lock.json", "tsconfig.json",
 )
 REQUIRED_PLUGIN = (
-    "fames-mcp-gateway.php", "LICENSE", "readme.txt", "assets/brand.css",
+    "jalin-mcp-gateway.php", "LICENSE", "readme.txt", "assets/brand.css",
     "assets/admin.css", "assets/admin.js", "assets/oauth.css", "assets/finance.css",
     "assets/brand/jalinwp-logo-horizontal-white.png", "assets/brand/favicon-32.png",
-    "includes/class-oauth.php", "includes/class-admin.php", "docs/VALIDATION.md",
-)
-EXTRA_RUNTIME = (
-    "test-runtime/brand-preview-tests.php", "test-runtime/admin-033-tests.php",
-    "test-runtime/oauth-cleanup-tests.php", "test-runtime/admin-033-dom.cjs",
+    "includes/class-oauth.php", "includes/class-admin.php",
 )
 SOURCE_TREES = (PLUGIN_NAME, "docs", "scripts", ".github")
-EVIDENCE_TREES = (
-    "test-runtime/evidence", "test-runtime/evidence-0.3.2",
-    "test-runtime/evidence-0.3.3", "test-runtime/brand-preview",
+RETAINED_EVIDENCE_TREES = (
+    "docs/evidence/evidence", "docs/evidence/evidence-0.3.2", "docs/evidence/evidence-0.3.3",
 )
-ROOT_FILES = (
-    "source-kit-members.json", "build-validation-031.py",
-    "package-0.3.1.py", "package-0.3.2.py", "package-0.3.3.py",
-    *REQUIRED_ROOT,
-)
+ROOT_FILES = REQUIRED_ROOT
 BLOCKED_PARTS = {
     ".git", "node_modules", "__pycache__", ".pytest_cache", ".venv", "venv",
-    "fixtures", "runs", "dist", "ui-preview", "admin-033-fixtures",
+    ".pi", "fixtures", "runs", "dist", "ui-preview", "admin-033-fixtures", "brand-preview", "design-browser-preview",
 }
 BLOCKED_SUFFIXES = {".pyc", ".zip", ".log", ".sql", ".sqlite", ".sqlite3", ".db", ".pem", ".key"}
 
@@ -57,14 +48,18 @@ def excluded(relative):
     parts = relative.parts
     # Versioned evidence may include deliberately retained test transcripts.
     # Ordinary runtime/plugin logs remain generated output and are excluded.
-    evidence_log = relative.suffix.lower() == ".log" and any(
-        relative.is_relative_to(Path(tree))
-        for tree in EVIDENCE_TREES if Path(tree).name.startswith("evidence")
+    retained_evidence = any(relative.is_relative_to(Path(tree)) for tree in RETAINED_EVIDENCE_TREES)
+    evidence_log = relative.suffix.lower() == ".log" and retained_evidence
+    generated_result = relative.name.endswith(("-output.json", "-result.json")) and not retained_evidence
+    generated_result = generated_result or (
+        relative.parent == Path("scripts/test-runtime")
+        and (relative.name.endswith("-render.html") or relative.name in {"brand-verification.json", "wp-tools.json"})
     )
     return (
         any(part in BLOCKED_PARTS or part.startswith("oauth-http-disposable-") for part in parts)
         or any(part.startswith(".env") and part != ".env.example" for part in parts)
         or relative.name in {".DS_Store", "wp-config.php", "SOURCE-MANIFEST.json"}
+        or generated_result
         or (relative.suffix.lower() in BLOCKED_SUFFIXES and not evidence_log)
     )
 
@@ -82,7 +77,7 @@ def checked_file(root, relative):
 
 
 def version(root=ROOT):
-    bootstrap = (root / PLUGIN_NAME / "fames-mcp-gateway.php").read_text(encoding="utf-8")
+    bootstrap = (root / PLUGIN_NAME / "jalin-mcp-gateway.php").read_text(encoding="utf-8")
     readme = (root / PLUGIN_NAME / "readme.txt").read_text(encoding="utf-8")
     patterns = (
         (bootstrap, r"^\s*\*?\s*Version:\s*([^\s]+)\s*$"),
@@ -102,13 +97,13 @@ def version(root=ROOT):
 
 def source_files(root=ROOT):
     root = root.resolve()
-    members = set(ROOT_FILES) | set(EXTRA_RUNTIME)
-    legacy = json.loads((root / "source-kit-members.json").read_text(encoding="utf-8"))
+    members = set(ROOT_FILES)
+    legacy = json.loads((root / "scripts/source-kit-members.json").read_text(encoding="utf-8"))
     if not isinstance(legacy, list) or not all(isinstance(name, str) for name in legacy):
         raise ValueError("source-kit-members.json must be a list of relative file names")
     members.update(legacy)
     members.update(path.name for path in root.glob("*.md"))
-    for tree in SOURCE_TREES + EVIDENCE_TREES:
+    for tree in SOURCE_TREES:
         directory = root / tree
         if directory.is_symlink():
             raise ValueError(f"Source directory must not be a symlink: {tree}")
@@ -125,8 +120,7 @@ def install_files(root=ROOT):
     prefix = PLUGIN_NAME + "/"
     return [path for path in source_files(root)
             if path.relative_to(root).as_posix().startswith(prefix)
-            and "tests" not in path.relative_to(root / PLUGIN_NAME).parts
-            and path.relative_to(root / PLUGIN_NAME).as_posix() != "bridge/test.mjs"]
+            and "tests" not in path.relative_to(root / PLUGIN_NAME).parts]
 
 
 def write_member(archive, name, data):
@@ -143,7 +137,7 @@ def build(root=ROOT, output=None):
     output = (output or root / "dist").resolve()
     if output == root or root.is_relative_to(output):
         raise ValueError("Output must be a separate directory, not the repository root or its parent")
-    if output.is_relative_to(root) and output.relative_to(root).parts[0] in {*SOURCE_TREES, "test-runtime"}:
+    if output.is_relative_to(root) and output.relative_to(root).parts[0] in SOURCE_TREES:
         raise ValueError("Output must be outside maintained source directories; use dist/")
     release = version(root)
     sources = source_files(root)
@@ -158,7 +152,7 @@ def build(root=ROOT, output=None):
             write_member(archive, path.relative_to(root).as_posix(), path.read_bytes())
     manifest = {
         "brand": "JalinWP", "version": release, "source_root": "jalinwp/",
-        "install_basename": f"{PLUGIN_NAME}/fames-mcp-gateway.php",
+        "install_basename": f"{PLUGIN_NAME}/jalin-mcp-gateway.php",
         "install_zip": {"name": install.name, "sha256": digest(install.read_bytes())},
         "files": [{"path": path.relative_to(root).as_posix(), "bytes": path.stat().st_size,
                    "sha256": digest(path.read_bytes())} for path in sources],
@@ -184,7 +178,7 @@ def build(root=ROOT, output=None):
         "install_members": len(installer_files), "source_members": len(sources) + 1,
         "install_sha256": digest(install.read_bytes()), "source_sha256": digest(source.read_bytes()),
         "checks": ["Version agreement", "Curated source membership", "Required assets and metadata",
-                   "ZIP integrity", "Legacy plugin basename", "Install/source byte identity", "Source manifest"],
+                   "ZIP integrity", "Plugin basename", "Install/source byte identity", "Source manifest"],
     }
     (output / "package-verification.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     return report

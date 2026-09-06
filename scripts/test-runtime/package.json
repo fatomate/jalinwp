@@ -1,0 +1,24 @@
+{
+  "name": "jalin-mcp-test-runtime",
+  "version": "1.0.0",
+  "description": "Disposable PHP WASM and WordPress/WooCommerce integration fixtures",
+  "scripts": {
+    "setup": "node setup-fixture.mjs",
+    "test": "node run-wp-tests.mjs wp-tools-tests.php",
+    "test:smoke": "node run-wp-tests.mjs runtime-smoke.php"
+  },
+  "license": "GPL-2.0-or-later",
+  "type": "commonjs",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@php-wasm/cli": "3.1.52",
+    "@wp-playground/cli": "3.1.52"
+  },
+  "overrides": {
+    "qs": "6.16.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

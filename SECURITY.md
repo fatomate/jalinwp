@@ -24,7 +24,7 @@ Maintainers should enable GitHub private vulnerability reporting or publish anot
 - Disabling the gateway blocks MCP access. An Application Password used by the optional local bridge remains a WordPress credential and should be revoked separately when it is no longer needed.
 - HTTPS is required for remote authentication. A hosting firewall can block requests before WordPress receives them; PHP diagnostics cannot observe those requests.
 
-See [OAuth Development](fames-mcp-gateway/docs/OAUTH-DEVELOPMENT.md), [Change Modes](fames-mcp-gateway/docs/YOLO-MODE.md), and [Connection Recovery](fames-mcp-gateway/docs/CONNECTION-RECOVERY.md) for implementation and operational details.
+See [OAuth Development](docs/OAUTH-DEVELOPMENT.md), [Change Modes](docs/YOLO-MODE.md), and [Connection Recovery](docs/CONNECTION-RECOVERY.md) for implementation and operational details.
 
 ## Development And Release Hygiene
 
@@ -32,4 +32,4 @@ Use the disposable test runtime with synthetic data. Keep real credentials, priv
 
 If a real credential is exposed, revoke or rotate it at its issuer. Removing a file in a later commit does not invalidate the credential or remove earlier Git history.
 
-The [validation report](fames-mcp-gateway/docs/VALIDATION.md) records completed tests and their limits. It is not an independent security audit or a guarantee of compatibility with every host, database, theme or extension.
+The [validation report](docs/VALIDATION.md) records completed tests and their limits. It is not an independent security audit or a guarantee of compatibility with every host, database, theme or extension.
