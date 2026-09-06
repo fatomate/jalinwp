@@ -4,7 +4,7 @@
 
 An open-source MCP gateway for WordPress and WooCommerce.
 
-This unreleased source tree uses the JalinWP plugin identity. See [0.3.3 Notes](UPGRADE-0.3.3.md) and [Branding Notes](BRANDING.md).
+This public source tree uses the JalinWP plugin identity. See [0.3.3 Notes](UPGRADE-0.3.3.md) and [Branding Notes](BRANDING.md).
 
 An installable WordPress plugin that exposes a typed MCP interface for WordPress and WooCommerce. It provides built-in OAuth sign-in for ChatGPT and Claude: copy the endpoint, connect, sign in to your WordPress site and approve access. It also includes a local connection bridge and configurable financial metadata mappings for gateways such as Stripe and Billplz. This is a staging preview, not a full third-party replacement.
 

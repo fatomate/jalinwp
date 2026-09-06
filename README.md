@@ -2,9 +2,13 @@
 
 <img src="jalin-mcp-gateway/assets/brand/jalinwp-logo-horizontal-white.png" alt="JalinWP" width="300">
 
+Made with passion from Malaysia 🇲🇾
+
 **An open-source MCP gateway for WordPress and WooCommerce.** Connect an AI client to your site using OAuth, retrieve permitted information, and choose how changes are applied.
 
-This private repository at [github.com/fatomate/jalinwp](https://github.com/fatomate/jalinwp) contains **JalinWP 0.3.3**, its complete plugin source, local test harnesses, documentation, and release tooling. Version 0.3.3 is the initial private GitHub release of this tree; the published tag—not a working-tree hash—is the source identity once it exists.
+This public repository at [github.com/fatomate/jalinwp](https://github.com/fatomate/jalinwp) contains **JalinWP 0.3.3**, its complete plugin source, local test harnesses, documentation, and release tooling. Version 0.3.3 is the initial public GitHub release; the published tag—not a working-tree hash—is the source identity.
+
+**Jalin** is Malay for weaving or joining a connection; **WP** is WordPress. The name, like the Jalin Weave mark, is about interlacing AI clients with a site and store through clear, purposeful joins. It does not imply official WordPress or WooCommerce affiliation, or national endorsement. See the [brand guidelines](docs/BRAND-GUIDELINES.md).
 
 ## What It Does
 
@@ -65,16 +69,17 @@ See [Connection Setup](docs/CONNECTING-CHATGPT.md) and [Connection Recovery](doc
 | `scripts/test-runtime/` | Disposable WordPress/PHP-WASM runner, pinned npm lockfiles, and integration wrappers. |
 | `scripts/` | Current repository packaging and verification tools. |
 | `docs/` | Plugin guides, developer/runtime instructions, and retained historical evidence. |
-| `docs/REPOSITORY-SETUP.md` | Private-repository and release preparation notes. |
+| `docs/REPOSITORY-SETUP.md` | Repository and release preparation notes. |
 | `AGENTS.md` | Source map and working guidance for coding agents. |
 | `CONTRIBUTING.md` | Local setup, focused verification and contribution workflow. |
 | `SECURITY.md` | Vulnerability reporting and security maintenance guidance. |
+| `CODE_OF_CONDUCT.md` | Contributor Covenant for community spaces. |
 
 Historical reports under `docs/evidence/` and `docs/history/` are sanitized references, not current proofs. See [repository kit validation](docs/REPOSITORY-VALIDATION.md) for kit-assembly checks and [current validation](docs/VALIDATION.md) for executed 0.3.3 results.
 
 ## Develop And Contribute
 
-Begin with [Contributing](CONTRIBUTING.md) and the [Developer Tests Guide](docs/DEVELOPER-TESTS.md). No access to a live WordPress site is required for the local fixture tests.
+Public issues and pull requests are welcome. Begin with [Contributing](CONTRIBUTING.md), the [Code of Conduct](CODE_OF_CONDUCT.md), and the [Developer Tests Guide](docs/DEVELOPER-TESTS.md). No access to a live WordPress site is required for the local fixture tests.
 
 Useful implementation references:
 

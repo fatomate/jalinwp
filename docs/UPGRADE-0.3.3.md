@@ -1,6 +1,6 @@
 # Historical 0.3.3 Admin And Connection Cleanup Notes
 
-> **Sanitized historical reference, not current release guidance.** JalinWP 0.3.3 is being prepared as an initial private GitHub release and is installed fresh; this document preserves the earlier development notes only.
+> **Sanitized historical reference, not current release guidance.** JalinWP 0.3.3 is the initial public GitHub release and is installed fresh; this document preserves the earlier development notes only.
 
 ## What Changed
 

@@ -18,7 +18,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN_NAME = "jalin-mcp-gateway"
 REQUIRED_ROOT = (
-    "README.md", "LICENSE", "CHANGELOG.md", "AGENTS.md", "CONTRIBUTING.md", "SECURITY.md",
+    "README.md", "LICENSE", "CHANGELOG.md", "AGENTS.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md", "SECURITY.md",
     ".gitignore", ".gitattributes", ".editorconfig", "package.json", "package-lock.json", "tsconfig.json",
 )
 REQUIRED_PLUGIN = (

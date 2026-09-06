@@ -2,7 +2,7 @@
 
 ## Start Here
 
-Read [README.md](README.md) and [CONTRIBUTING.md](CONTRIBUTING.md) first. Version 0.3.3 is the initial published release in the private [GitHub repository](https://github.com/fatomate/jalinwp); use its tag as the release source reference, not as evidence for later working-tree changes.
+Read [README.md](README.md) and [CONTRIBUTING.md](CONTRIBUTING.md) first. Version 0.3.3 is the initial published release in the public [GitHub repository](https://github.com/fatomate/jalinwp); use its tag as the release source reference, not as evidence for later working-tree changes.
 
 Use [architecture](docs/ARCHITECTURE.md) for the module map and [validation notes](docs/VALIDATION.md) for executed plugin tests and their limits. Historical handoffs and evidence under `docs/history/` and `docs/evidence/` are references, not current validation.
 For security-sensitive changes, read the [security audit](docs/SECURITY-AUDIT-0.3.3.md) and its residual risks. For packaging or publication, read the [release guide](docs/RELEASE-0.3.3.md); distinguish candidate-time pending gates from verified GitHub release/CI state.
@@ -50,4 +50,4 @@ Keep downloaded dependencies, disposable sites, generated output, credentials, a
 
 ## Release Discipline
 
-Publish only when explicitly requested. Keep version metadata synchronized, resolve material security/review findings, and require green CI on the exact release commit. Verify install/source ZIP membership and fresh activation of the extracted install ZIP. Upload both ZIPs plus `SHA256SUMS` to a draft release, download and compare against the local checksums, then publish. Preserve existing tags/assets rather than silently replacing them. Repository visibility changes and live deployments require separate authorization.
+Publish only when explicitly requested. Keep version metadata synchronized, resolve material security/review findings, and require green CI on the exact release commit. Verify install/source ZIP membership and fresh activation of the extracted install ZIP. Upload both ZIPs plus `SHA256SUMS` to a draft release, download and compare against the local checksums, then publish. Preserve existing tags/assets rather than silently replacing them. Live deployments require separate authorization.

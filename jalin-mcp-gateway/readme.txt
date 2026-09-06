@@ -18,10 +18,10 @@ diagnostics, revocation controls and configurable fee/affiliate metadata mapping
 WordPress Application Password authentication and a local stdio bridge remain
 available for local clients.
 
-Documentation lives in the private source repository, not this install ZIP:
+Documentation lives in the public source repository, not this install ZIP:
 https://github.com/fatomate/jalinwp/blob/v0.3.3/README.md
 OAuth setup: https://github.com/fatomate/jalinwp/blob/v0.3.3/docs/CONNECTING-CHATGPT.md
-Repository access is required. Hosted fleet management is not included.
+Hosted fleet management is not included.
 
 == Installation ==
 
@@ -36,7 +36,7 @@ Repository access is required. Hosted fleet management is not included.
 ChatGPT OAuth setup does not require Node.js or an Application Password. Reconnect if
 you later enable additional data/write access or YOLO Mode. YOLO
 executes in the original tool call without WP dashboard approval; client-side
-confirmations may still appear. YOLO guide (repository access required):
+confirmations may still appear. YOLO guide:
 https://github.com/fatomate/jalinwp/blob/v0.3.3/docs/YOLO-MODE.md
 Site-side diagnostics do not prove that an external ChatGPT connection has completed successfully.
 
@@ -47,7 +47,7 @@ Historical retention/upgrade notes below are not an upgrade or compatibility
 contract. Install 0.3.3 fresh; old public identifiers have no aliases.
 
 = 0.3.3 =
-Initial private GitHub release.
+Initial public GitHub release.
 Compact header with a single Cobalt border and version-only display.
 Finance Setup summarizes standard WooCommerce data in a compact text block.
 Dedicated Connection Setup, OAuth Connections and Access Controls tabs.

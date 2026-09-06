@@ -1,6 +1,6 @@
 # JalinWP 0.3.3 Source Layout
 
-JalinWP is a private repository at <https://github.com/fatomate/jalinwp>. Version 0.3.3 is its intended initial GitHub release and is installed as a fresh plugin; there is no upgrade or migration path in this source tree.
+JalinWP is a public repository at <https://github.com/fatomate/jalinwp>. Version 0.3.3 is the initial GitHub release and is installed as a fresh plugin; there is no upgrade or migration path in this source tree.
 
 Start with:
 

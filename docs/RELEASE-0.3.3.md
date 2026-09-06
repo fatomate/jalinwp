@@ -1,6 +1,6 @@
 # JalinWP 0.3.3 — Initial GitHub Release
 
-This is the initial release from the private [fatomate/jalinwp](https://github.com/fatomate/jalinwp) repository. It is not an upgrade contract for previously distributed internal copies. The GitHub **tag** is the source identity for the published archives; this file does not mean the tag already exists.
+This is the initial public release from [fatomate/jalinwp](https://github.com/fatomate/jalinwp). It is not an upgrade contract for previously distributed internal copies. The GitHub **tag** is the source identity for the published archives; this file does not mean the tag already exists.
 
 ## Install
 
@@ -23,4 +23,4 @@ The MCP namespace is **`jalin-mcp/v1`** and its URL is `/wp-json/jalin-mcp/v1/mc
 
 [Validation](VALIDATION.md) records executed WordPress/PHP-WASM, WooCommerce, Node, DOM, native MariaDB schema, HTTP simulation, syntax/type and packaging checks that have actually been run. [Security Audit](SECURITY-AUDIT-0.3.3.md) records the fixed medium GET filesystem issue and remaining low/informational host, consent and race limits. Those limits are not claimed as code fixes.
 
-Local simulated ChatGPT/Claude OAuth flows are not real hosted-client verification. No live deployment, full supported-version/theme matrix, authenticated browser/editor acceptance, real TLS/proxy validation or native WooCommerce HPOS test is claimed. The repository remains private. Extracted-install activation passed 7/7. The release workflow additionally gates publication on formal Standards/Spec review, CI on the exact reviewed commit SHA, and a matching tag and downloaded asset checksums; final publication evidence belongs to the GitHub release and Actions records.
+Local simulated ChatGPT/Claude OAuth flows are not real hosted-client verification. No live deployment, full supported-version/theme matrix, authenticated browser/editor acceptance, real TLS/proxy validation or native WooCommerce HPOS test is claimed. Extracted-install activation passed 7/7. The release workflow additionally gates publication on formal Standards/Spec review, CI on the exact reviewed commit SHA, and a matching tag and downloaded asset checksums; final publication evidence belongs to the GitHub release and Actions records.

@@ -2,9 +2,9 @@
 
 JalinWP exposes authorized WordPress and WooCommerce operations through MCP. Native account permissions, site access settings and OAuth consent determine the available access. Fresh installations are Read Only; enabling Reviewed Changes, YOLO Mode or sensitive-data access is an administrator choice.
 
-## Report A Vulnerability Privately
+## Report A Vulnerability
 
-If the GitHub repository has private vulnerability reporting enabled, open **Security → Report A Vulnerability**. Otherwise, use a private reporting channel explicitly published by the repository maintainer. This source kit does not configure that GitHub feature or establish a private contact address.
+Report security issues privately through GitHub: **Security → Report a vulnerability** on [fatomate/jalinwp](https://github.com/fatomate/jalinwp/security/advisories/new).
 
 Do not publish exploitable details, credentials, OAuth tokens, personal data or customer/order exports in a public issue. A useful private report includes:
 
@@ -14,7 +14,7 @@ Do not publish exploitable details, credentials, OAuth tokens, personal data or 
 - Required account privileges and access mode.
 - A minimal proof of concept or sanitized evidence.
 
-Maintainers should enable GitHub private vulnerability reporting or publish another private reporting channel before inviting external vulnerability reports. No response-time commitment or supported-version maintenance policy has been established by this repository kit.
+No response-time commitment or supported-version maintenance policy has been published.
 
 ## Security-Relevant Behavior
 

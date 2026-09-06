@@ -1,6 +1,6 @@
 # Changelog
 
-**0.3.3** is the initial private GitHub release of this repository. Earlier entries describe internal development, not a supported public upgrade path. Publication identity is the release tag when it exists.
+**0.3.3** is the initial public GitHub release of this repository. Earlier entries describe internal development, not a supported public upgrade path. Publication identity is the release tag when it exists.
 
 ## 0.3.3
 

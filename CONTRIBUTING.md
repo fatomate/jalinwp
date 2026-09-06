@@ -1,8 +1,8 @@
 # Contributing To JalinWP
 
-JalinWP is a PHP WordPress plugin with a disposable local integration environment. Contributions can cover functionality, compatibility, tests, documentation or interface improvements.
+JalinWP is a public GPL-licensed WordPress plugin. Issues and pull requests are welcome. Contributions can cover functionality, compatibility, tests, documentation or interface improvements.
 
-For suspected security vulnerabilities, follow [SECURITY.md](SECURITY.md). For ordinary issues, describe the behavior, reproduction steps, relevant versions and expected outcome. Remove credentials and customer information from reports.
+Participation is covered by the [Code of Conduct](CODE_OF_CONDUCT.md). For suspected security vulnerabilities, follow [SECURITY.md](SECURITY.md). For ordinary issues, describe the behavior, reproduction steps, relevant versions and expected outcome. Remove credentials and customer information from reports.
 
 ## Local Setup
 
@@ -83,7 +83,7 @@ python3 scripts/package.py
 
 Review the generated verification result and the ZIP contents. The outputs belong under `dist/` and are ignored by Git. Keep downloaded dependencies, local database files, runtime copies, secrets and transient logs out of commits. Lockfiles and maintained tests belong in version control.
 
-The included GitHub workflow runs repository/package checks and the local Node bridge tests. It does not run WordPress integration suites or connect to a live site. A local pass is not a GitHub Actions run; the workflow can run only after the repository is pushed and Actions is enabled.
+The included GitHub workflow runs repository/package checks and the local Node bridge tests. It does not run WordPress integration suites or connect to a live site. A local pass is not a GitHub Actions run.
 
 Update user-facing documentation and the changelog when behavior changes. Keep the plugin header, `FG_VERSION` and `readme.txt` stable tag synchronized for an intentional version bump. Upload the installable ZIP as a release attachment only when publishing a release is intended.
 
